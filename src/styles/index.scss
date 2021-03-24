@@ -1,0 +1,53 @@
+@import './variables.scss';
+@font-face {
+  font-family: pangmen;
+  src: url(../font/pangmen.ttf);
+}
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height:100%;
+  width: 100%;
+  font-family:Source Han Sans CN;
+}
+body {
+  color: #fff;
+  font-size: 16px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  background-color: #04020e;
+}
+#app{
+  height:100%;
+  width:100%;
+  background:  url(~@/images/common/bg.png) center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100%;
+}
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: " "
+}
+
+.clearfix:after {
+  clear: both
+}
+
+.pulll_left {
+  float: left;
+}
+
+.pulll_right {
+  float: right;
+}
+ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  
+}
