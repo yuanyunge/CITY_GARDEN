@@ -12,11 +12,14 @@ export const constantRoutes = [{
   children: [{
     path: '/cityGarden/comReg',
     component: () => import(/* webpackChunkName: "Setting" */ '@/views/comReg/index')
+  }, {
+    path: '/cityGarden/epidemic',
+    component: () => import(/* webpackChunkName: "Setting" */ '@/views/epidemic/index')
   }]
 },
 {
   path: '/',
-  redirect: '/cityGarden/comReg'
+  redirect: '/cityGarden/epidemic'
 }
 ];
 

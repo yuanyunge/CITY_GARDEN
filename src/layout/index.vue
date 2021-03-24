@@ -2,7 +2,7 @@
 <template>
   <div>
     <app-head />
-    <div>
+    <div class="main">
       <router-view />
     </div>
   </div>
@@ -18,6 +18,8 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-
+<style lang="scss" scoped>
+  .main{
+    margin-top:-88.8px;
+  }
 </style>
