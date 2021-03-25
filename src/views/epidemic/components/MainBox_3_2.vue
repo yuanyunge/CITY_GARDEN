@@ -99,6 +99,7 @@ export default {
           }
         },
         series: [{
+          barWidth: 30,
           label: {
             show: true,
             position: 'top',

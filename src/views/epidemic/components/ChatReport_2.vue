@@ -9,7 +9,8 @@ export default {
   data() {
     return {
       linebarChart: null,
-      linebarChartOptions: {}
+      linebarChartOptions: {},
+      bardata: [20, 23, 30, 40, 45, 60, 40]
     };
   },
   mounted() {
@@ -34,12 +35,18 @@ export default {
             crossStyle: {
               color: '#999'
             }
+
+          },
+          formatter: function(param) {
+            console.log(param);
+            return '<b>' + param[0].name + '</b>' + '<br>' + param[0].seriesName + ':' + param[0].value + '<br>' +
+            param[3].seriesName + ':' + param[0].value;
           }
         },
         grid: {
-          top: '10px',
+          top: '30px',
           left: '0',
-          right: '0',
+          right: '10px',
           bottom: '10px',
           containLabel: true
         },
@@ -59,6 +66,10 @@ export default {
           {
             type: 'value',
             name: '新增(万)',
+            nameTextStyle: {
+              color: '#fff',
+              align: 'center'
+            },
             min: 0,
             max: 100,
             interval: 20,
@@ -78,6 +89,10 @@ export default {
           {
             type: 'value',
             name: '累计(千万)',
+            nameTextStyle: {
+              color: '#fff',
+              align: 'center'
+            },
             min: 0,
             max: 15,
             interval: 3,
@@ -96,25 +111,102 @@ export default {
           }
         ],
         series: [
-          {
+          // {
+          //   name: '新增',
+          //   type: 'bar',
+          //   data: [26, 35, 20, 45, 46, 25, 28],
+          //   itemStyle: {
+          //     color: {
+          //       type: 'linear',
+          //       x: 0,
+          //       y: 0,
+          //       x2: 0,
+          //       y2: 1,
+          //       colorStops: [{
+          //         offset: 0, color: 'rgba(64, 217, 161, 0.35)' // 0% 处的颜色
+          //       }, {
+          //         offset: 1, color: '#42E1A6' // 100% 处的颜色
+          //       }],
+          //       global: false
+          //     }
+          //   }
+          // },
+          { // 柱底圆片
             name: '新增',
-            type: 'bar',
-            data: [26, 35, 20, 45, 46, 25, 28],
+            type: 'pictorialBar',
+            symbolSize: [20, 10], // 调整截面形状
+            symbolOffset: [0, 5],
+            z: 5,
             itemStyle: {
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [{
-                  offset: 0, color: 'rgba(64, 217, 161, 0.35)' // 0% 处的颜色
-                }, {
-                  offset: 1, color: '#42E1A6' // 100% 处的颜色
-                }],
-                global: false
+              'normal': {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(66, 225, 166, 0.4)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(66, 225, 166, 0.6)'
+                }
+                ])
               }
-            }
+            },
+            data: this.bardata
+          },
+
+          // 柱体
+          {
+            name: '',
+            type: 'bar',
+            barGap: '0%',
+            barWidth: 20, // 柱体宽度
+            itemStyle: {
+              'normal': {
+                'color': {
+                  'x': 0,
+                  'y': 0,
+                  'x2': 0,
+                  'y2': 1,
+                  'type': 'linear',
+                  'global': false,
+                  'colorStops': [{ // 第一节下面
+                    'offset': 0,
+                    'color': '#42E1A6'
+                  }, {
+                    'offset': 1,
+                    'color': 'rgba(64, 217, 161, 0.35)'
+                  }]
+                }
+              }
+            },
+
+            data: this.bardata
+          },
+
+          // 柱顶圆片
+          {
+            name: '',
+            type: 'pictorialBar',
+            symbolSize: [20, 10], // 调整截面形状[宽, 高]
+            symbolOffset: [0, -5],
+            z: 12,
+            symbolPosition: 'end',
+            'itemStyle': {
+              'normal': {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1,
+                  [{
+                    offset: 0,
+                    color: '#51EEB4'
+                  },
+                  {
+                    offset: 1,
+                    color: '#51EEB4'
+                  }
+                  ],
+                  false
+                )
+              }
+            },
+            data: this.bardata
           },
           {
             name: '累计',

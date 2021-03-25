@@ -7,6 +7,35 @@
     <div class="main_box_2_2 mapArea">
       <div id="lishuiMap" ref="dataMapBox" class="dataMapContainer" />
     </div>
+    <div class="main_box_2_3 ymjzInfo">
+      <div class="MainBox_2_3-title" />
+      <div class="AreaSelectedName">【 缙云县 】</div>
+      <div class="AreaSelectedTag">全市疫苗接种情况</div>
+      <div class="ymjzInfoContent">
+        <ul class="ymjzinfoList clearfix">
+          <li class="ymjzinfoItem width40">
+            <div class="infoTitle">应接种总人数</div>
+            <div class="infoRecord"><span class="emphasisText">300,000</span><span>人</span></div>
+          </li>
+          <li class="ymjzinfoItem width40">
+            <div class="infoTitle">当日接种</div>
+            <div class="infoRecord"><span class="emphasisText">17,011</span><span>人</span></div>
+          </li>
+          <li class="ymjzinfoItem">
+            <div class="infoTitle">接种完成率</div>
+            <div class="infoRecord"><span class="emphasisText">2.28</span><span>%</span></div>
+          </li>
+          <li class="ymjzinfoItem width40">
+            <div class="infoTitle">累计完成单剂次接种</div>
+            <div class="infoRecord"><span class="emphasisText">10,164</span><span>人</span></div>
+          </li>
+          <li class="ymjzinfoItem width40">
+            <div class="infoTitle">累计完成两剂次接种</div>
+            <div class="infoRecord"><span class="emphasisText">6847</span><span>人</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -462,12 +491,85 @@ export default {
     }
     .main_box_2_2{
         width:625px;
-        height:573px;
-        border:1px solid red;
+        height:572px;
         .dataMapContainer{
             width:100%;
             height:100%;
         }
+    }
+    .main_box_2_3{
+      width: 625px;
+      height:300px;
+      padding:25px 36px 30px 27px;
+      position: relative;
+      .MainBox_2_3-title{
+          position: absolute;
+          width: 206px;
+          height:84px;
+          background:  url(~@/images/epidemic/ymjz_bt@2x.png) center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          top:0;
+          left:0;
+      }
+      .AreaSelectedName{
+        font-size: 28px;
+        font-family: Source Han Sans CN;
+        font-weight: 800;
+        color: #FFFFFF;
+        line-height: 38px;
+        position: absolute;
+        left:191px;
+        top:25px;
+      }
+      .AreaSelectedTag{
+        font-size: 16px;
+        color: #00E4FF;
+        background-image: url(~@/images/epidemic/qsymjzqkqh_bg@2x.png);
+        background-size: cover;
+        width: 177px;
+        height: 50px;
+        line-height: 50px;
+        opacity: 0.5;
+        text-align: center;
+        position: absolute;
+        right:10px;
+        &.active{
+          opacity: 1;
+        }
+      }
+      .ymjzInfoContent{
+        width:100%;
+        margin-top:60px;
+        .ymjzinfoList{
+          list-style: none;
+          margin:0;
+          padding:0;
+          .width40{
+            width:40%;
+          }
+          &>li{
+            float:left;
+            width:20%;
+            margin-bottom:37px;
+            .infoTitle{
+              font-size:16px;
+              color:#fff;
+            }
+            .infoRecord{
+              margin-top:21px;
+              color:#fff;
+              font-size:18px;
+              .emphasisText{
+                font-size:36px;
+                color:#00E4FF;
+                font-weight:bold;
+              }
+            }
+          }
+        }
+
+      }
     }
 }
 </style>
