@@ -1,13 +1,13 @@
 <template>
   <div class="main-box">
     <ul>
-      <li><main-box_1_1 /><main-box_1_2 /></li>
+      <li><MainBox_1_1 /><MainBox_1_2 /></li>
       <li class="middlePart">
-        <main-box_2_1 />
+        <MainBox_2_1 />
       </li>
       <li>
-        <main-box_3_1 />
-        <main-box_3_2 />
+        <MainBox_3_1 />
+        <MainBox_3_2 />
       </li>
     </ul>
   </div>

@@ -1,43 +1,47 @@
 <template>
   <div class="MainBox_1_1">
-    <div class="MainBox_1_1-title"></div>
+    <div class="MainBox_1_1-title" />
     <div class="MainBox_1_1-total">
       <div class="MainBox_1_1-sub">
-        <span>全球</span><span class="square"></span><span>新增确诊病例数</span><span class="square spe"></span><span>累计确诊病例数</span>
+        <span>全球</span><span class="square" /><span>新增确诊病例数</span><span class="square spe" /><span>累计确诊病例数</span>
       </div>
       <div class="MainBox_1_1-report">
-        <chat-report_1/>
+        <ChatReport_1 />
       </div>
     </div>
     <div class="MainBox_1_1-total">
       <div class="MainBox_1_1-sub">
-        <span>全球</span><span class="square"></span><span>新增境外输入确诊病例</span><span class="square spe"></span><span>新增境外输入确诊病例</span>
+        <span>全球</span><span class="square" /><span>新增境外输入确诊病例</span><span class="square spe" /><span>新增境外输入确诊病例</span>
       </div>
-      <div class="MainBox_1_1-report"></div>
+      <div class="MainBox_1_1-report">
+        <ChatReport_2 />
+      </div>
     </div>
     <ul class="MainBox_1_1-bottom">
       <li>
         <p>本土无症状感染者(今日）</p>
-        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:0"><span class="progress-inner"></span></span></span><span class="num">0</span><span>例</span></div>
-        <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:40%"><span class="progress-inner"></span></span></span><span class="num">4363</span><span>例</span></div>
+        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:0"><span class="progress-inner" /></span></span><span class="num">0</span><span>例</span></div>
+        <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:40%"><span class="progress-inner" /></span></span><span class="num">4363</span><span>例</span></div>
       </li>
       <li class="spe">
         <p>境外输入无症状感染者(今日）</p>
-        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:2%"><span class="progress-inner"></span></span></span><span class="num">8</span><span>例</span></div>
-        <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:33%"><span class="progress-inner"></span></span></span><span class="num">3984</span><span>例</span></div>
+        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:2%"><span class="progress-inner" /></span></span><span class="num">8</span><span>例</span></div>
+        <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:33%"><span class="progress-inner" /></span></span><span class="num">3984</span><span>例</span></div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  import ChatReport_1 from './ChatReport_1';
-  export default {
-      name:'MainBox_1_1',
-      components:{
-        ChatReport_1
-      }
+import ChatReport_1 from './ChatReport_1';
+import ChatReport_2 from './ChatReport_2';
+export default {
+  name: 'MainBox11',
+  components: {
+    ChatReport_1,
+    ChatReport_2
   }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -118,7 +122,7 @@
                   top:0;
                 }
               }
-              
+
             }
             .num{
               font-size:22px;
@@ -146,7 +150,7 @@
       }
   }
   .MainBox_1_1-report{
-    height: 162px;
+    height: 180px;
     width:100%;
   }
 </style>
