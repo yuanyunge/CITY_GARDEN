@@ -1,11 +1,11 @@
 <template>
-  <div id="chatReport1" ref="chatReport1" class="main_box_1_chart1" />
+  <div id="chatReport2" ref="chatReport2" class="main_box_1_chart2" />
 </template>
 
 <script>
 import * as echarts from 'echarts';
 export default {
-  name: 'ChatReport1',
+  name: 'ChatReport2',
   data() {
     return {
       linebarChart: null,
@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     this.$nextTick(function() {
-      this.linebarChart = echarts.init(this.$refs.chatReport1);
+      this.linebarChart = echarts.init(this.$refs.chatReport2);
       this.linebarChart.showLoading({
         color: '#fff',
         maskColor: 'rgba(0, 0, 0, 0)',
@@ -152,7 +152,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .main_box_1_chart1{
+  .main_box_1_chart2{
     width: 100%;
     height: 100%;
   }
