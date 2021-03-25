@@ -1,11 +1,12 @@
 <template>
   <div class="main-box">
     <ul>
-      <li><MainBox_1_1 /></li>
+      <li><MainBox_1_1 /><MainBox_1_2 /></li>
       <li class="middlePart">
         <MainBox_2_1 />
       </li>
       <li>
+        <MainBox_3_1 />
         <MainBox_3_2 />
       </li>
     </ul>
@@ -15,13 +16,16 @@
 <script>
 import MainBox_1_1 from './components/MainBox_1_1';
 import MainBox_2_1 from './components/MainBox_2_1';
+import MainBox_1_2 from './components/MainBox_1_2';
+import MainBox_3_1 from './components/MainBox_3_1';
 import MainBox_3_2 from './components/MainBox_3_2';
-
 export default {
   name: 'Epidemic',
   components: {
     MainBox_1_1,
     MainBox_2_1,
+    MainBox_1_2,
+    MainBox_3_1,
     MainBox_3_2
   }
 };
@@ -39,6 +43,9 @@ export default {
         margin-left:19px;
       }
       &:first-child{
+        margin-right:24px;
+      }
+      &:last-child{
         margin-right:24px;
       }
     }

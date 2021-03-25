@@ -141,9 +141,9 @@ export default {
   background: url(~@/images/epidemic/jcyj_bg@2x.png) center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 63px 27px 16px 19px;
+  padding: 63px 10px 16px 19px;
   position: relative;
-
+  margin-top:19px;
   .MainBox_3_2-title {
     position: absolute;
     width: 206px;
@@ -173,7 +173,8 @@ export default {
         line-height: 50px;
         opacity: 0.5;
         text-align: center;
-
+        cursor: pointer;
+        margin-right:10px;
         &.tagItem1 {
           background-image: url(~@/images/epidemic/jwrlryqh_bg@2x.png);
           width: 141px;
