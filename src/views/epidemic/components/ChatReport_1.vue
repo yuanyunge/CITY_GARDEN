@@ -214,7 +214,7 @@ export default {
             yAxisIndex: 1,
             smooth: true,
             itemStyle: {
-              color: '#20DBEE',
+              color: 'rgba(243, 146, 31, 1)',
               opacity: 0
             },
             areaStyle: {
@@ -225,7 +225,7 @@ export default {
                 x2: 0,
                 y2: 1,
                 colorStops: [{
-                  offset: 0, color: '#20DBEE' // 0% 处的颜色
+                  offset: 0, color: 'rgba(243, 146, 31, 1)' // 0% 处的颜色
                 }, {
                   offset: 1, color: 'transparent' // 100% 处的颜色
                 }],
