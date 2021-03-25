@@ -5,8 +5,8 @@
       <div class="MainBox_3_1-sub">近3日来丽人员预测</div>
       <div class="MainBox_3_1-content part1">
         <ul>
-          <li>境外来丽<span>38</span>人</li>
-          <li>中高风险地区来丽<span>0</span>人</li>
+          <li>境外来丽<span><countTo :start-val="0" :end-val="0" :duration="2000" /></span>人</li>
+          <li>中高风险地区来丽<span><countTo :start-val="0" :end-val="9" :duration="2000" /></span>人</li>
         </ul>
       </div>
     </div>
@@ -14,12 +14,12 @@
       <div class="MainBox_3_1-sub">实际入丽人数(今日)</div>
       <div class="MainBox_3_1-content part2">
         <ul>
-          <li>境外实际入丽<span>97</span>人</li>
-          <li>累计<span>10377</span>人</li>
+          <li>境外实际入丽<span><countTo :start-val="0" :end-val="97" :duration="2000" /></span>人</li>
+          <li>累计<span><countTo :start-val="0" :end-val="14710" :duration="2000" /></span>人</li>
         </ul>
         <ul>
-          <li>中高风险地区实际入丽<span>0</span>人</li>
-          <li>累计<span>0</span>人</li>
+          <li>中高风险地区实际入丽<span><countTo :start-val="0" :end-val="0" :duration="2000" /></span>人</li>
+          <li>累计<span><countTo :start-val="0" :end-val="0" :duration="2000" /></span>人</li>
         </ul>
       </div>
     </div>
@@ -27,16 +27,16 @@
       <div class="MainBox_3_1-sub">纳入管控人数</div>
       <div class="MainBox_3_1-content part3">
         <ul>
-          <li>应纳入管控<span>2,238</span>人</li>
-          <li>实际纳入管控<span>2,238</span>人</li>
+          <li>应纳入管控<span><countTo :start-val="0" :end-val="238" :duration="2000" /></span>人</li>
+          <li>实际纳入管控<span><countTo :start-val="0" :end-val="238" :duration="2000" /></span>人</li>
         </ul>
         <ul>
-          <li>累计管控<span>15,910</span>人</li>
-          <li>其中集中隔离<span>10,910</span>人</li>
+          <li>累计管控<span><countTo :start-val="0" :end-val="156910" :duration="2000" /></span>人</li>
+          <li>其中集中隔离<span><countTo :start-val="0" :end-val="20110" :duration="2000" /></span>人</li>
         </ul>
         <ul>
-          <li>居家健康观察<span>100,430</span>人</li>
-          <li>日常健康监测<span>100,430</span>人</li>
+          <li>居家健康观察<span><countTo :start-val="0" :end-val="100430" :duration="2000" /></span>人</li>
+          <li>日常健康监测<span><countTo :start-val="0" :end-val="34124" :duration="2000" /></span>人</li>
         </ul>
       </div>
     </div>
@@ -44,8 +44,12 @@
 </template>
 
 <script>
+import countTo from 'vue-count-to';
 export default {
-  name: 'MainBox31'
+  name: 'MainBox31',
+  components: {
+    countTo
+  }
 };
 </script>
 
@@ -56,7 +60,7 @@ export default {
         background:  url(~@/images/epidemic/zdrqgk_bg@2x.png) center center;
         background-size: cover;
         background-repeat: no-repeat;
-        padding:71px 32px 10px 22px;
+        padding:71px 10px 10px 25px;
         position: relative;
     }
     .MainBox_3_1-header{
@@ -77,21 +81,19 @@ export default {
     }
     .MainBox_3_1-content{
         margin-bottom:8px;
-        ul{
+        >ul{
             display:flex;
             flex-direction: row;
-            li{
+            >li{
                 width:50%;
                 line-height:10px;
-                span{
+                >span{
                     color:rgba(0, 228, 255, 1);
                     font-size:24px;
                     font-weight:800;
-                    margin-left:12px;
-                    margin-right:3px;
                 }
             }
-            li:last-child{
+            >li:last-child{
                 border-left:1px dashed rgba(255, 255, 255, 1);
                 padding-left:14px;
             }

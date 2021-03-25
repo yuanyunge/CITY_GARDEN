@@ -10,7 +10,7 @@ export default {
     return {
       linebarChart: null,
       linebarChartOptions: {},
-      bardata: [20, 23, 30, 40, 45, 60, 40]
+      bardata: [3.43768, 3.13002, 4.19857, 5.00723, 4.96088, 4.90536, 4.38506]
     };
   },
   mounted() {
@@ -53,7 +53,7 @@ export default {
         xAxis: [
           {
             type: 'category',
-            data: ['3月1日', '3月2日', '3月3日', '3月4日', '3月5日', '3月6日', '3月7日'],
+            data: ['3月8日', '3月9日', '3月10日', '3月11日', '3月12日', '3月13日', '3月14日'],
             axisPointer: {
               type: 'shadow'
             },
@@ -71,8 +71,8 @@ export default {
               align: 'center'
             },
             min: 0,
-            max: 100,
-            interval: 20,
+            max: 10,
+            interval: 2,
             axisLabel: {
               formatter: '{value}',
               color: '#fff'
@@ -93,9 +93,9 @@ export default {
               color: '#fff',
               align: 'center'
             },
-            min: 0,
-            max: 15,
-            interval: 3,
+            min: 11,
+            max: 12.5,
+            interval: 0.3,
             axisLabel: {
               formatter: '{value}',
               color: '#fff'
@@ -232,7 +232,7 @@ export default {
                 global: false
               }
             },
-            data: [11, 10, 11, 12, 11.5, 15, 12]
+            data: [11.7456037, 11.7769039, 11.8188896, 11.8689619, 11.8689619, 11.9673234, 12.0111749]
           }
         ]
       };

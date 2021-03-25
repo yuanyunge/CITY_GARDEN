@@ -531,7 +531,7 @@ export default {
         line-height: 38px;
         position: absolute;
         left:191px;
-        top:25px;
+        top:20px;
       }
       .AreaSelectedTag{
         font-size: 16px;
@@ -545,6 +545,7 @@ export default {
         text-align: center;
         position: absolute;
         right:10px;
+        top:15px;
         &.active{
           opacity: 1;
         }
