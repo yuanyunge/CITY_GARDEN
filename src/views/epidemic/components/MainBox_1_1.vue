@@ -105,7 +105,7 @@ export default {
           margin-right:13px;
         }
         .square.spe{
-          background-color:#20DBEE;
+          background-color:rgba(243, 146, 31, 1);
         }
       }
       .MainBox_1_1-bottom{
