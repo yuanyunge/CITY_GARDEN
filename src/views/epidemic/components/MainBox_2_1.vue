@@ -1,12 +1,15 @@
 <template>
   <div class="main_box_2">
-    <div class="main_box_2_1 todayInfoDesc">
-      <div class="todayInfoItem">1.2021年3月19日0-24时,丽水市无新增确诊病例,截至3月19日24年,境外病例</div>
-      <div class="todayInfoItem">2.2021年3月19日0-24时,丽水市无新增确诊病例,截至3月19日24年,境外病例</div>
+    <div class="main_box_2_1">
+      <div class="todayInfoDesc">
+        <div class="todayInfoItem">1.2021年3月19日0-24时,丽水市无新增确诊病例,截至3月19日24年,境外病例</div>
+        <div class="todayInfoItem">2.2021年3月19日0-24时,丽水市无新增确诊病例,截至3月19日24年,境外病例</div>
+      </div>
+      <div class="mapArea">
+        <div id="lishuiMap" ref="dataMapBox" class="dataMapContainer" />
+      </div>
     </div>
-    <div class="main_box_2_2 mapArea">
-      <div id="lishuiMap" ref="dataMapBox" class="dataMapContainer" />
-    </div>
+
     <div class="main_box_2_3 ymjzInfo">
       <div class="MainBox_2_3-title" />
       <div class="AreaSelectedName">【 缙云县 】</div>
@@ -57,8 +60,8 @@ export default {
       option: {},
       mapname: 'lishui',
       curMapOption: {
-        zoom: 1.1,
-        aspectScale: 0.9
+        zoom: 1.2,
+        aspectScale: 1
       },
       mapJsonList: [
         {
@@ -477,10 +480,17 @@ export default {
 .main_box_2{
     .main_box_2_1{
         width: 625px;
-        height: 87px;
-        background: rgba(0, 228, 255, 0.1);
-        border-radius: 10px;
-        padding:21px;
+        height: 634px;
+        position:relative;
+         padding-top:63px;
+        .todayInfoDesc{
+          height:87px;
+          background: rgba(0, 228, 255, 0.1);
+          border-radius: 10px;
+          padding:21px;
+          position:absolute;
+          top:0;
+        }
         .todayInfoItem{
             font-size:16px;
             font-weight:bold;
@@ -489,7 +499,8 @@ export default {
             color:#20DBEE;
         }
     }
-    .main_box_2_2{
+    .mapArea{
+
         width:625px;
         height:572px;
         .dataMapContainer{
