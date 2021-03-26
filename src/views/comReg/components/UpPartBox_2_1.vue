@@ -38,9 +38,10 @@ export default {
 .uppartBox_2_1 {
   width: 572px;
   height: 266px;
+  margin-left:19px;
   position: relative;
   background-image: url(~@/images/comreg/wszy_png@2x.png);
-  padding-left: 20px;
+  padding-left: 23px;
   padding-top: 77px;
   padding-right: 20px;
 
