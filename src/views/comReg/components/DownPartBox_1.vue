@@ -5,63 +5,126 @@
       <ul>
         <li>
           <div class="legend_title">医保报销病种费用<span>TOP10</span></div>
-          <div class="down_part_box_1_ul">
-            <ul>
-              <li>
-                <span>1</span>
-              </li>
-              <li>
-                肺恶性肿瘤
-              </li>
-              <li>
-                <el-progress :percentage="67.6" :show-text="false" /><div>38.30万元</div>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>1</span>
-              </li>
-              <li>
-                颅内动脉瘤
-              </li>
-              <li>
-                <el-progress :percentage="30.04" :show-text="false" /><div>15.02万元</div>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>1</span>
-              </li>
-              <li>
-                心房颤动
-              </li>
-              <li>
-                <el-progress :percentage="13.56" :show-text="false" /><div>6.78万元</div>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>1</span>
-              </li>
-              <li>
-                戈谢病
-              </li>
-              <li>
-                <el-progress :percentage="12.6" :show-text="false" /><div>6.30万元</div>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>1</span>
-              </li>
-              <li>
-                蛛网膜下腔出血
-              </li>
-              <li>
-                <el-progress :percentage="10.86" :show-text="false" /><div>5.43万元</div>
-              </li>
-            </ul>
-          </div>
+          <el-carousel :autoplay="false" arrow="never" trigger="click">
+            <el-carousel-item>
+              <div class="down_part_box_1_ul">
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    肺恶性肿瘤
+                  </li>
+                  <li>
+                    <el-progress :percentage="67.6" :show-text="false" /><div>38.30万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    颅内动脉瘤
+                  </li>
+                  <li>
+                    <el-progress :percentage="30.04" :show-text="false" /><div>15.02万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    心房颤动
+                  </li>
+                  <li>
+                    <el-progress :percentage="13.56" :show-text="false" /><div>6.78万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    戈谢病
+                  </li>
+                  <li>
+                    <el-progress :percentage="12.6" :show-text="false" /><div>6.30万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    蛛网膜下腔出血
+                  </li>
+                  <li>
+                    <el-progress :percentage="10.86" :show-text="false" /><div>5.43万元</div>
+                  </li>
+                </ul>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="down_part_box_1_ul">
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    肺恶性肿瘤
+                  </li>
+                  <li>
+                    <el-progress :percentage="67.6" :show-text="false" /><div>38.30万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    颅内动脉瘤
+                  </li>
+                  <li>
+                    <el-progress :percentage="30.04" :show-text="false" /><div>15.02万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    心房颤动
+                  </li>
+                  <li>
+                    <el-progress :percentage="13.56" :show-text="false" /><div>6.78万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    戈谢病
+                  </li>
+                  <li>
+                    <el-progress :percentage="12.6" :show-text="false" /><div>6.30万元</div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>1</span>
+                  </li>
+                  <li>
+                    蛛网膜下腔出血
+                  </li>
+                  <li>
+                    <el-progress :percentage="10.86" :show-text="false" /><div>5.43万元</div>
+                  </li>
+                </ul>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
         </li>
         <li>
           <div class="legend_title">医保收费类项目统计</div>
@@ -71,10 +134,10 @@
                 <tr><td>排名</td><td>项目类型</td><td>费用</td><td>占比(%)</td><td>同比(%)</td></tr>
               </thead>
               <tbody>
-                <tr><td><div class="icon1 bg_img" /></td><td>药品费用</td><td>4.18亿元</td><td>51.07</td><td><span class="up" />6.42</td></tr>
-                <tr><td><div class="icon2 bg_img" /></td><td>服务费用</td><td>48.72亿元</td><td>0.06</td><td><span class="up" />14.98</td></tr>
-                <tr><td><div class="icon3 bg_img" /></td><td>诊疗费用</td><td>3.93亿元</td><td>48.05</td><td><span class="down" />-6.09</td></tr>
-                <tr><td><div class="icon4 bg_img" /></td><td>材料费用</td><td>669.82亿元</td><td>0.82</td><td><span class="up" />28.90</td></tr>
+                <tr><td><div class="icon1 bg_img" /></td><td>药品费用</td><td>4.18亿元</td><td>51.07</td><td><span class="up bg_img" />6.42</td></tr>
+                <tr><td><div class="icon2 bg_img" /></td><td>服务费用</td><td>48.72亿元</td><td>0.06</td><td><span class="up bg_img" />14.98</td></tr>
+                <tr><td><div class="icon3 bg_img" /></td><td>诊疗费用</td><td>3.93亿元</td><td>48.05</td><td><span class="down bg_img" />-6.09</td></tr>
+                <tr><td><div class="icon4 bg_img" /></td><td>材料费用</td><td>669.82亿元</td><td>0.82</td><td><span class="up bg_img" />28.90</td></tr>
               </tbody>
             </table>
           </div>
@@ -224,9 +287,33 @@ export default {
         background-image:  url(~@/images/comreg/sfpm4_icon@2x.png);
       }
     }
+    td:last-child>span{
+      display:inline-block;
+      width:6px;
+      height:17px;
+      margin-right:10px;
+      vertical-align: middle;
+    }
+    td:last-child>span.up{
+      background-image:  url(~@/images/comreg/hjt_icon@2x.png);
+    }
+    td:last-child>span.down{
+      background-image:  url(~@/images/comreg/ljt_icon@2x.png);
+    }
     >tbody>tr>td:nth-child(4){
       color:#42E1A6;
     }
   }
+}
+::v-deep .el-carousel__container{
+  height:200px;
+}
+::v-deep .el-carousel__indicators--horizontal{
+  left:47%;
+}
+::v-deep .el-carousel__button{
+  width:6px;
+  height:6px;
+  border-radius: 50%;
 }
 </style>
