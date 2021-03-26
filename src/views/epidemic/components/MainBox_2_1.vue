@@ -293,7 +293,7 @@ export default {
         tooltip: {
           trigger: 'item',
           formatter: function(params) {
-            return areaEnumMap[params.name] + ' : ' + params.value;
+            return '境外输入无症状感染者' + params.value + '人';
           }
         },
         geo: {

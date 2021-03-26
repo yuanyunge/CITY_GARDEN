@@ -22,6 +22,11 @@ export default {
         zlevel: 0
       });
       this.initLineChart();
+      const resizeFun = window.onresize || function() {};
+      window.onresize = () => {
+        resizeFun();
+        this.linebarChart.resize();
+      };
     });
   },
   methods: {
