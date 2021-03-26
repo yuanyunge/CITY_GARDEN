@@ -22,6 +22,11 @@ export default {
       moduleName: 'epidemic'
     };
   },
+  watch: {
+    '$route.name': function(n) {
+      this.moduleName = n;
+    }
+  },
   created() {
     this.countCurTime();
     this.moduleName = this.$route.name;

@@ -12,11 +12,11 @@ export const constantRoutes = [{
   children: [{
     name: 'comReg',
     path: '/cityGarden/comReg',
-    component: () => import(/* webpackChunkName: "Setting" */ '@/views/comReg/index')
+    component: () => import(/* webpackChunkName: "comReg" */ '@/views/comReg/index')
   }, {
     name: 'epidemic',
     path: '/cityGarden/epidemic',
-    component: () => import(/* webpackChunkName: "Setting" */ '@/views/epidemic/index')
+    component: () => import(/* webpackChunkName: "epidemic" */ '@/views/epidemic/index')
   }]
 },
 {
