@@ -3,8 +3,13 @@
   <div class="comReg_main_container main-box">
     <ul class="up_Part_box">
       <li><UpPartBox_1 /></li>
-      <li>2</li>
-      <li>3</li>
+      <li>
+        <div><UpPartBox_2_1 /></div>
+        <div><UpPartBox_2_2 /></div>
+      </li>
+      <li>
+        <UpPartBox_2_2 />
+      </li>
     </ul>
     <ul class="down_part_box">
       <li>1</li>
@@ -15,10 +20,14 @@
 
 <script>
 import UpPartBox_1 from './components/UpPartBox_1';
+import UpPartBox_2_1 from './components/UpPartBox_2_1';
+import UpPartBox_2_2 from './components/UpPartBox_2_2';
 export default {
   name: 'ComReg',
   components: {
-    UpPartBox_1
+    UpPartBox_1,
+    UpPartBox_2_1,
+    UpPartBox_2_2
   }
 };
 </script>
