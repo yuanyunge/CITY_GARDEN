@@ -7,7 +7,7 @@
       <li>3</li>
     </ul>
     <ul class="down_part_box">
-      <li>1</li>
+      <li><DownPartBox_1 /></li>
       <li>21</li>
     </ul>
   </div>
@@ -15,10 +15,12 @@
 
 <script>
 import UpPartBox_1 from './components/UpPartBox_1';
+import DownPartBox_1 from './components/DownPartBox_1';
 export default {
   name: 'ComReg',
   components: {
-    UpPartBox_1
+    UpPartBox_1,
+    DownPartBox_1
   }
 };
 </script>
@@ -36,5 +38,8 @@ export default {
   // .up_Part_box{
 
   // }
+  .down_part_box{
+    margin-top:19px;
+  }
 }
 </style>
