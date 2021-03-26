@@ -12,14 +12,14 @@
     <div class="MainBox_1_1-total">
       <div class="MainBox_1_1-sub">
         <span>全国</span><span class="square" /><span>新增境外输入确诊病例</span><span class="square spe" /><span>累计境外输入确诊病例</span>
-        <!-- <el-select v-model="value" class="MainBox_1_1-select">
+        <el-select v-model="value" class="chart_options MainBox_1_1-select" popper-class="chart_options_dropdown">
           <el-option
             v-for="item in options"
             :key="item.value"
             :label="item.label"
             :value="item.value"
           />
-        </el-select> -->
+        </el-select>
       </div>
       <div class="MainBox_1_1-report">
         <ChatReport_2 />
@@ -179,5 +179,11 @@ export default {
   }
   .MainBox_1_1-total{
     margin-bottom:15px;
+  }
+  .el-select.MainBox_1_1-select{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width:112px;
   }
 </style>
