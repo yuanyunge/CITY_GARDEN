@@ -2,13 +2,14 @@
 <template>
   <div>
     <div class="head">
-      <div class="head-title epidemic" />
+      <div class="head-title" :class="moduleName" />
       <div class="head-right">{{ curTime }}</div>
     </div>
   </div>
 </template>
 
 <script>
+
 import {
   parseTime
 } from '@/utils/index';
@@ -17,11 +18,13 @@ export default {
   data() {
     return {
       curTime: '',
-      curTimeout: null
+      curTimeout: null,
+      moduleName: 'epidemic'
     };
   },
   created() {
     this.countCurTime();
+    this.moduleName = this.$route.name;
   },
   methods: {
     countCurTime() {

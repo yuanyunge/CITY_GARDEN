@@ -10,9 +10,11 @@ export const constantRoutes = [{
   path: '/cityGarden',
   component: Layout,
   children: [{
+    name: 'comReg',
     path: '/cityGarden/comReg',
     component: () => import(/* webpackChunkName: "Setting" */ '@/views/comReg/index')
   }, {
+    name: 'epidemic',
     path: '/cityGarden/epidemic',
     component: () => import(/* webpackChunkName: "Setting" */ '@/views/epidemic/index')
   }]

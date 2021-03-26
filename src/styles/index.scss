@@ -56,6 +56,8 @@ ul {
   list-style:none;
   
 }
+
+/**公用**/
 .el-select.MainBox_1_1-select {
   position: absolute;
   right: 0;
@@ -72,6 +74,57 @@ ul {
     // padding-right:16px;
   }
 }
+
+.bg_img{
+  background-size:cover;
+  background-repeat: center center;
+  background-repeat: no-repeat;
+}
+
+.el-select.chart_options{
+  .el-input__inner{
+    background-color:rgba(32, 219, 238, 0.2);
+    border-radius:12px;
+    border:1px solid #20DBEE;
+    height:24px;
+    line-height:24px;
+    font-size:16px;
+    color:#fff;
+  }
+  .el-input__icon{
+    line-height:24px;
+    color:#fff;
+  }
+}
+.el-select-dropdown.chart_options_dropdown{
+    background: rgba(32, 219, 238, 0.2);
+    border: 0px solid #20DBEE;
+    border-radius: 10px;
+    .popper__arrow{
+      display: none;
+    }
+    .el-select-dropdown__list{
+      padding:11px 0;
+    }
+    .el-select-dropdown__item{
+      height:30px;
+      line-height:30px;
+      color:#fff;
+      text-align:center;
+      background: rgba(255,255,255,.0);
+      font-size:16px;
+    }
+    .el-select-dropdown__item.selected{
+      background: rgba(255,255,255,.2);
+      color:#fff;
+    }
+    .el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+      background: rgba(255,255,255,.2);
+      color:#fff;
+    }
+}
+
+
 
 
 
