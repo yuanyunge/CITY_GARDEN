@@ -10,7 +10,7 @@ export default {
     return {
       linebarChart: null,
       linebarChartOptions: {},
-      bardata: [20, 23, 30, 40, 45, 60, 40]
+      bardata: [8, 5, 6, 9, 7, 10, 5]
     };
   },
   mounted() {
@@ -58,7 +58,7 @@ export default {
         xAxis: [
           {
             type: 'category',
-            data: ['3月1日', '3月2日', '3月3日', '3月4日', '3月5日', '3月6日', '3月7日'],
+            data: ['3月8日', '3月9日', '3月10日', '3月11日', '3月12日', '3月13日', '3月14日'],
             axisPointer: {
               type: 'shadow'
             },
@@ -70,14 +70,14 @@ export default {
         yAxis: [
           {
             type: 'value',
-            name: '新增(万)',
+            name: '新增(例)',
             nameTextStyle: {
               color: '#fff',
               align: 'center'
             },
             min: 0,
-            max: 100,
-            interval: 20,
+            max: 15,
+            interval: 2,
             axisLabel: {
               formatter: '{value}',
               color: '#fff'
@@ -93,14 +93,14 @@ export default {
           },
           {
             type: 'value',
-            name: '累计(千万)',
+            name: '累计(例)',
             nameTextStyle: {
               color: '#fff',
               align: 'center'
             },
-            min: 0,
-            max: 15,
-            interval: 3,
+            min: 5000,
+            max: 5200,
+            interval: 40,
             axisLabel: {
               formatter: '{value}',
               color: '#fff'
@@ -219,7 +219,7 @@ export default {
             yAxisIndex: 1,
             smooth: true,
             itemStyle: {
-              color: '#20DBEE',
+              color: 'rgba(243, 146, 31, 1)',
               opacity: 0
             },
             areaStyle: {
@@ -230,14 +230,14 @@ export default {
                 x2: 0,
                 y2: 1,
                 colorStops: [{
-                  offset: 0, color: '#20DBEE' // 0% 处的颜色
+                  offset: 0, color: 'rgba(243, 146, 31, 1)' // 0% 处的颜色
                 }, {
                   offset: 1, color: 'transparent' // 100% 处的颜色
                 }],
                 global: false
               }
             },
-            data: [11, 10, 11, 12, 11.5, 15, 12]
+            data: [5099, 5104, 5110, 5119, 5126, 5136, 5141]
           }
         ]
       };

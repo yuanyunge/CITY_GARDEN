@@ -11,7 +11,15 @@
     </div>
     <div class="MainBox_1_1-total">
       <div class="MainBox_1_1-sub">
-        <span>全球</span><span class="square" /><span>新增境外输入确诊病例</span><span class="square spe" /><span>新增境外输入确诊病例</span>
+        <span>全国</span><span class="square" /><span>新增境外输入确诊病例</span><span class="square spe" /><span>累计境外输入确诊病例</span>
+        <!-- <el-select v-model="value" class="MainBox_1_1-select">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select> -->
       </div>
       <div class="MainBox_1_1-report">
         <ChatReport_2 />
@@ -25,7 +33,7 @@
       </li>
       <li class="spe">
         <p>境外输入无症状感染者(今日）</p>
-        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:2%"><span class="progress-inner" /></span></span><span class="num">8</span><span>例</span></div>
+        <div class="MainBox_1_1-progress first"><span>新增</span><span class="progress"><span style="width:2%"><span class="progress-inner" /></span></span><span class="num">9</span><span>例</span></div>
         <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:33%"><span class="progress-inner" /></span></span><span class="num">3984</span><span>例</span></div>
       </li>
     </ul>
@@ -40,6 +48,21 @@ export default {
   components: {
     ChatReport_1,
     ChatReport_2
+  },
+  data() {
+    return {
+      value: 'outInput',
+      options: [{
+        value: 'outInput',
+        label: '境外输入'
+      }, {
+        value: 'asymptomatic',
+        label: '本土无症状'
+      }, {
+        value: 'outInputAsymptomatic',
+        label: '境外输入无症状'
+      }]
+    };
   }
 };
 </script>
@@ -68,7 +91,8 @@ export default {
         border-left:1px solid #42E1A6;
         padding-left:6px;
         font-size:14px;
-        margin-bottom: 13px;;
+        margin-bottom: 13px;
+        position: relative;
         span{
           vertical-align: middle;
         }
@@ -81,7 +105,7 @@ export default {
           margin-right:13px;
         }
         .square.spe{
-          background-color:#20DBEE;
+          background-color:rgba(243, 146, 31, 1);
         }
       }
       .MainBox_1_1-bottom{
@@ -150,7 +174,10 @@ export default {
       }
   }
   .MainBox_1_1-report{
-    height: 180px;
+    height: 190px;
     width:100%;
+  }
+  .MainBox_1_1-total{
+    margin-bottom:15px;
   }
 </style>

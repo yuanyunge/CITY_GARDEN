@@ -42,9 +42,6 @@ export default {
         flex-grow: 1;
         margin-left:19px;
       }
-      &:first-child{
-        margin-right:24px;
-      }
       &:last-child{
         margin-right:24px;
       }

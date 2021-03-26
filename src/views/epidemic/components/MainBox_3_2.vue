@@ -111,12 +111,12 @@ export default {
               color: '#42E1A6'
             }
           }, {
-            value: 31,
+            value: 94,
             itemStyle: {
               color: '#F3921F'
             }
           }, {
-            value: 31,
+            value: 94,
             itemStyle: {
               color: '#20DBEE'
             }

@@ -10,7 +10,7 @@
 html, body{
   height:100%;
   width: 100%;
-  font-family:Source Han Sans CN;
+  font-family:"Source Han Sans CN";
 }
 body {
   color: #fff;
@@ -55,6 +55,22 @@ ul {
   padding:0;
   list-style:none;
   
+}
+.el-select.MainBox_1_1-select {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:112px;
+  .el-input--suffix .el-input__inner {
+    background: transparent;
+    border-color: rgba(0, 228, 255, 1);
+    color: #fff;
+    font-size: 14px;
+    height:32px;
+    line-height: 32px;
+    // padding-left:8px;
+    // padding-right:16px;
+  }
 }
 
 
