@@ -165,7 +165,58 @@ ul {
   cursor: pointer;
 }
 
+.BottomBox3-ul {
+  padding-right: 100px;
+  position: relative;
+}
 
+.BottomBox3-ul>ul {
+  display: flex;
+
+  >li {
+    >div {
+      height: 100%;
+    }
+
+    width:33.3%;
+    height:140px;
+  }
+}
+
+.Circle-year {
+  position: absolute;
+  right: 25px;
+  bottom: 22%;
+}
+
+.Circle-year>ul>li {
+  margin-bottom: 15px;
+
+  >span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+}
+
+.Circle-year>ul>li:last-child {
+  margin-bottom: 0;
+}
+
+.Circle-year>ul>li:first-child>span {
+  background-color: #4BF3F9;
+}
+
+.Circle-year>ul>li:last-child>span {
+  background-color: #F3921F;
+}
+
+.Circle-year>ul>li:nth-child(2)>span {
+  background-color: #42E1A6;
+}
 
 
 

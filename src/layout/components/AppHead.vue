@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <div class="head" @click="dialogVisible=true">
+    <div class="head" @click="openDia">
       <div class="head-title" :class="moduleName" />
       <div class="head-right">{{ curTime }}</div>
     </div>
@@ -62,6 +62,11 @@ export default {
     countCurTime() {
       this.curTime = parseTime(new Date(), '{y}年{m}月{d}日 周{a} {h}:{i}');
       this.curTimeout = setTimeout(this.countCurTime, 1000);
+    },
+    openDia() {
+      if (this.moduleName === 'epidemic') {
+        this.dialogVisible = true;
+      }
     }
   },
   destroy() {
@@ -97,9 +102,9 @@ export default {
       background-image:  url(~@/images/common/mryqfk_bt@2x.png);
     }
     .healthlishui{
-      width:218px;
+      width:145px;
       height:27px;
-      background-image:  url(~@/images/common/mryqfk_bt@2x.png);
+      background-image:  url(~@/images/common/jkls@2x.png);
     }
     .head-right{
       position: absolute;

@@ -49,7 +49,9 @@ export default {
     margin-top:15px;
     & > ul {
       display: flex;
-      justify-content: space-between;
+      >li:nth-child(2){
+        margin:0 15px 0 17px;
+      }
     }
   }
 

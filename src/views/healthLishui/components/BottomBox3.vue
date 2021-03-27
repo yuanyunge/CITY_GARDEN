@@ -1,11 +1,27 @@
 <template>
   <div class="BottomBox3 bg_img">
     <div class="box-title bg_img" />
+    <div class="legend_title">国家卫生乡镇创建率(%)</div>
+    <div class="BottomBox3-ul">
+      <ul>
+        <li><CircleEC :value="12" :total="845" unit="个" color="#4BF3F9" /></li>
+        <li><CircleEC :value="57" :total="135" unit="个" color="#42E1A6" /></li>
+        <li><CircleEC :value="57" :total="135" unit="个" color="#F3921F" /></li>
+      </ul>
+    </div>
+    <div class="Circle-year">
+      <ul><li><span />2018</li><li><span />2019</li><li><span />2020</li></ul>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import CircleEC from '@/components/CircleEC';
+export default {
+  components: {
+    CircleEC
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -24,4 +40,8 @@ export default {};
     left:0;
   }
 }
+.BottomBox3 .legend_title{
+    border-left-color:#724EE0;
+}
+
 </style>

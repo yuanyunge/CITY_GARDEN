@@ -1,70 +1,58 @@
 <template>
   <div class="topBox3_container bg_img">
-    <div class="box-title bg_img"></div>
-    <div class="topBox3_1 reportRecord">
+    <div class="box-title bg_img" />
+    <div class="topBox3_1 m-t-30">
       <div class="legend_title orangeTheme">
         丽水市设区城市日空气质量达标天数比率(%)
       </div>
-      <div class="topBox3_1_records">
-          <ul class="recordList">
-              <li>
-                  <el-progress type="circle" :percentage="85" color="#4BF3F9"></el-progress>
-              </li>
-              <li>
-                  <el-progress type="circle" :percentage="85" color="#42E1A6"></el-progress>
-              </li>
-              <li>
-                  <el-progress type="circle" :percentage="85" color="#F3921F"></el-progress>
-              </li>
-              <!-- <li>
-                  <el-progress type="circle" :percentage="25"></el-progress>
-              </li>
-              <li>
-                  <el-progress type="circle" :percentage="25"></el-progress>
-              </li> -->
-          </ul>
-      </div>
-    </div>
-    <div class="topBox2_2 reportChart">
-      <div class="reportChart-header clearfix">
-        <div class="legend_title greenTheme">
-          15以上人群吸烟率(%)
-          <span class="chartTit">(警戒线:22%）</span>
-        </div>
-        <ul class="legend_list horizen">
-          <li class="itemOrange">省</li>
-          <li class="itemBlue">市</li>
+      <div class="BottomBox3-ul">
+        <ul>
+          <li><CircleEC :value="95.6" :total="100" color="#4BF3F9" /></li>
+          <li><CircleEC :value="98.1" :total="100" color="#42E1A6" /></li>
+          <li><CircleEC :value="98.9" :total="100" color="#F3921F" /></li>
         </ul>
       </div>
-
-      <TopBox2_2_chart></TopBox2_2_chart>
+      <div class="Circle-year">
+        <ul><li><span />2018</li><li><span />2019</li><li><span />2020</li></ul>
+      </div>
     </div>
-    <div class="topBox2_3 reportChart">
-      <div class="reportChart-header clearfix">
-        <div class="legend_title greenTheme">
-          经常参加体育锻炼人数比例(%)
-          <span class="chartTit">(达标线28.3%）</span>
-        </div>
+    <div class="topBox3_1 topBox3_2">
+      <div class="legend_title orangeTheme">
+        丽水市地表水水质优良（达到或优于Ⅲ类）水体比例(%)
+      </div>
+      <div class="BottomBox3-ul">
         <ul class="legend_list horizen">
-          <li class="itemGreen">市</li>
+          <li><SemiCircleEC :value="100" :total="100" color="#4BF3F9" /></li>
+          <li><SemiCircleEC :value="100" :total="100" color="#42E1A6" /></li>
+          <li><SemiCircleEC :value="100" :total="100" color="#F3921F" /></li>
         </ul>
       </div>
-
-      <TopBox2_3_chart></TopBox2_3_chart>
+      <div class="Circle-year">
+        <ul><li><span />2018</li><li><span />2019</li><li><span />2020</li></ul>
+      </div>
+    </div>
+    <div class="topBox3_1 reportChart">
+      <div class="reportChart-header clearfix">
+        <div class="legend_title greenTheme">
+          主要食品质量安全抽检合格率(%)
+          <span class="chartTit">(达标线95%）</span>
+        </div>
+      </div>
+      <TopBox3_3_chart />
     </div>
   </div>
 </template>
 <script>
-import TopBox2_1_chart from "./topBox2_1_chart";
-import TopBox2_2_chart from "./topBox2_2_chart";
-import TopBox2_3_chart from "./topBox2_3_chart";
+import CircleEC from '@/components/CircleEC';
+import SemiCircleEC from '@/components/SemiCircleEC';
+import TopBox3_3_chart from './TopBox3_3_chart';
 
 export default {
   components: {
-    TopBox2_1_chart,
-    TopBox2_2_chart,
-    TopBox2_3_chart,
-  },
+    CircleEC,
+    SemiCircleEC,
+    TopBox3_3_chart
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -81,6 +69,9 @@ export default {
     background-image: url("~@/images/healthlishui/jkhj_bg@2x.png");
   }
   .topBox3_1{
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 0.05208rem dashed rgba(0, 228, 255, 0.2);
       .topBox3_1_records{
          .recordList{
              display: flex;
@@ -99,11 +90,14 @@ export default {
                         border:5px solid #4BF3F9;
                     }
                  }
-                 
+
              }
          }
 
       }
+  }
+  .topBox3_1:last-child{
+    border-bottom: none;
   }
   .topBox2_1,
   .topBox2_2,
@@ -140,5 +134,13 @@ export default {
       }
     }
   }
+}
+.topBox3_container .topBox3_2{
+  margin:20px 0;
+  padding-bottom:30px;
+}
+.chartTit {
+  color: #f1911f;
+  font-size: 16px;
 }
 </style>
