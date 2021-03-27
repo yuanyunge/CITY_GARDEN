@@ -2,9 +2,17 @@
   <div class="main-box_page3">
     <div class="topBox_container">
       <ul>
-        <li><TopBox1_1></TopBox1_1></li>
+        <li><TopBox1></TopBox1></li>
         <li>
-          <div class="legend_title">婴儿死亡率(‰)</div>
+          <TopBox2></TopBox2>
+          
+        </li>
+        <li><TopBox3></TopBox3></li>
+      </ul>
+    </div>
+    <div class="bottomBox_container">
+      <ul>
+        <li><div class="legend_title">婴儿死亡率(‰)</div>
           <ul class="legend_list horizen">
             <li class="itemGreen">swewe</li>
             <li class="itemOrange">swewe</li>
@@ -13,14 +21,7 @@
             <li class="itemGreen">1</li>
             <li class="itemOrange">2</li>
             <li class="itemBlue">3</li>
-          </ul>
-        </li>
-        <li>3</li>
-      </ul>
-    </div>
-    <div class="bottomBox_container">
-      <ul>
-        <li>1</li>
+          </ul></li>
         <li>2</li>
         <li>3</li>
       </ul>
@@ -28,10 +29,15 @@
   </div>
 </template>
 <script>
-import TopBox1_1 from "./components/topBox1_1";
+import TopBox1 from "./components/topBox1";
+import TopBox2 from "./components/topBox2";
+import TopBox3 from "./components/topBox3";
+
 export default {
   components: {
-    TopBox1_1,
+    TopBox1,
+    TopBox2,
+    TopBox3
   },
 };
 </script>
