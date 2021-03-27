@@ -1,17 +1,15 @@
 <template>
-  <div class="uppartBox2_2_chart_container">
+  <div class="bottomBox2_2_chart">
     <div
-      id="upbox_pie3dChart"
-      ref="upboxPie3dChartRender"
-      class="upbox_pie3dChart"
-    />
-    <div class="uppartBox2_2_legend">
-      <ul class="legend_list">
-        <li class="item1">医疗机构：8次</li>
-        <li class="item2">公共场所：5次</li>
-        <li class="item3">集中式、二次供水单位：3次</li>
-        <li class="item4">学校：2次</li>
-        <li class="item5">职工用人单位：2次</li>
+      class="bottomBox2_2_chartCon"
+      id="bottomBox2_2_chart"
+      ref="bottomBox2_2_chart"
+    ></div>
+    <div class="legend-container">
+      <ul class="legend_list vertical">
+        <li class="itemBlue">2018<span class="valueText">2.16㎡</span></li>
+        <li class="itemOrange">2019<span class="valueText">2.62㎡</span></li>
+        <li class="itemGreen">2020<span class="valueText">2.62㎡</span></li>
       </ul>
     </div>
   </div>
@@ -31,18 +29,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      // this.pieChartOf3d = echarts.init(this.$refs.upboxPie3dChartRender);
-      // this.pieChartOf3d.showLoading({
-      //   color: "#fff",
-      //   maskColor: "rgba(0, 0, 0, 0)",
-      //   zlevel: 0,
-      // });
       this.initPieChartOf3d();
-      // const resizeFun = window.onresize || function () {};
-      // window.onresize = () => {
-      //   resizeFun();
-      //   this.pieChartOf3d.resize();
-      // };
     });
   },
   methods: {
@@ -111,11 +98,11 @@ export default {
           }
         );
       })(Highcharts);
-      Highcharts.chart("upbox_pie3dChart", {
+      Highcharts.chart("bottomBox2_2_chart", {
         chart: {
           type: "pie",
           animation: false,
-          backgroundColor:'transparent',
+          backgroundColor: "transparent",
           events: {
             load: function () {
               var each = Highcharts.each,
@@ -143,49 +130,44 @@ export default {
           pie: {
             allowPointSelect: true,
             cursor: "pointer",
-            colors:['rgba(66, 225, 166, .5)','rgba(243, 146, 31, .5)','rgba(250, 237, 59, .5)','rgba(32, 219, 238, .5)','rgba(50, 113, 255, .5)'],
+            colors: [
+              "rgba(32, 219, 238, .5)",
+              "rgba(249, 174, 0, .5)",
+              "rgba(66, 225, 166, .5)"
+              
+            ],
             depth: 35,
-            innerSize: '60%',
+            innerSize: "60%",
             dataLabels: {
               enabled: false,
             },
           },
         },
-        title:{
-          text:null
+        title: {
+          text: null,
         },
-        credits:{
-          enabled:false
+        credits: {
+          enabled: false,
         },
         series: [
           {
             type: "pie",
-            name: "违法违规执行次数",
+            name: "人均体育场地面积",
             data: [
               {
-                name: "医疗机构",
-                y: 8,
+                name: "2018",
+                y: 2.16,
                 h: 20,
               },
               {
-                name: "公共场所",
-                y: 5,
+                name: "2019",
+                y: 2.62,
                 h: 1,
               },
               {
-                name: "集中式、二次供水单位",
-                y: 3,
+                name: "2020",
+                y: 2.62,
                 h: 5,
-              },
-              {
-                name: "学校",
-                y: 2,
-                h: 8,
-              },
-              {
-                name: "职工用人单位",
-                y: 2,
-                h: 16,
               },
             ],
           },
@@ -196,41 +178,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.uppartBox2_2_chart_container {
+.bottomBox2_2_chart {
   width: 100%;
-  height: 150px;
+  height: 145px;
   display: flex;
-  .upbox_pie3dChart {
+  & > div {
     width: 50%;
     height: 100%;
-  }
-  .legend_list{
-    padding-top:10px;
-    &>li{
-      margin-top:8px;
-      &::before{
-        content:'';
-        display: inline-block;
-        width: 6px;
-        height: 6px;
-        background: #42E1A6;
-        border-radius: 50%;
-        margin-right:8px;
-      }
-      &.item1::before{
-        background: #42E1A6;
-      }
-      &.item2::before{
-        background:  #F3921F;
-      }
-      &.item3::before{
-        background: #FAED3B;
-      }
-      &.item4::before{
-        background: #20DBEE;
-      }
-      &.item5::before{
-        background: #3271FF;
+    .legend_list {
+        margin-top:30px;
+      .valueText {
+          color:#20DBEE;
+          font-weight:bold;
+          margin-left: 8px;
       }
     }
   }
