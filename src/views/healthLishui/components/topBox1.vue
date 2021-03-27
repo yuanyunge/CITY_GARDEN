@@ -94,9 +94,33 @@
           <li class="itemBlue">市</li>
         </ul>
       </div>
+      <div class="chartTit">（省标准 <span class="valueText">50</span><span class="unitText">%</span>）</div>
+      <topBox1_1_chart></topBox1_1_chart>
+    </div>
+    <div class="topBox1_1_3 reportChart">
+      <div class="reportChart-header clearfix">
+        <div class="legend_title">城乡居民达到《国民体质测定标准》合格比例</div>
+        <ul class="legend_list horizen">
+          <li class="itemOrange">省</li>
+          <li class="itemBlue">市</li>
+        </ul>
+      </div>
+      <div class="chartTit">（省标准 <span class="valueText">93.50</span><span class="unitText">%</span>）</div>
+      <topBox1_2_chart></topBox1_2_chart>
     </div>
   </div>
 </template>
+<script>
+import topBox1_1_chart from './topBox1_1_chart';
+import topBox1_2_chart from './topBox1_2_chart';
+
+export default {
+    components:{
+        topBox1_1_chart,
+        topBox1_2_chart
+    }
+}
+</script>
 <style lang="scss" scoped>
 .topBox1_1_container {
   width: 633px;
@@ -111,7 +135,7 @@
   }
   .topBox1_1_1 {
     display: flex;
-    border-bottom:1px dashed #00E4FF;
+    border-bottom:1px dashed rgba(0,228,255,.2);
     & > li {
       .contentitem {
         width: 179px;
@@ -173,11 +197,35 @@
       }
     }
   }
-  .topBox1_1_2{
+  .topBox1_1_2,.topBox1_1_3{
       margin-top:12px;
+      border-bottom:1px dashed rgba(0,228,255,.2);
       .reportChart-header{
-          display: flex;
+          .legend_title{
+              float:left;
+          }
+          .legend_list{
+              float:right;
+          }
       }
+      .chartTit{
+          color:#fff;
+          font-size:16px;
+          margin-top:9px;
+          .valueText{
+              color:#F3921F;
+              font-size:20px;
+              font-weight:bold;
+          }
+          .unitText{
+              color:#F3921F;
+          }
+      }
+      
+  }
+  .topBox1_1_3{
+      margin-top:15px;
+      border-bottom:0;
   }
 }
 </style>

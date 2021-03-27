@@ -2,20 +2,11 @@
   <div class="main-box_page3">
     <div class="topBox_container">
       <ul>
-        <li><TopBox1_1 /></li>
+        <li><TopBox1 /></li>
         <li>
-          <div class="legend_title">婴儿死亡率(‰)</div>
-          <ul class="legend_list horizen">
-            <li class="itemGreen">swewe</li>
-            <li class="itemOrange">swewe</li>
-          </ul>
-          <ul class="legend_list vertical">
-            <li class="itemGreen">1</li>
-            <li class="itemOrange">2</li>
-            <li class="itemBlue">3</li>
-          </ul>
+          <TopBox2 />
         </li>
-        <li>3</li>
+        <li><TopBox3 /></li>
       </ul>
     </div>
     <div class="bottomBox_container">
@@ -31,13 +22,17 @@
 import BottomBox1 from './components/BottomBox1';
 import BottomBox2 from './components/BottomBox2';
 import BottomBox3 from './components/BottomBox3';
-import TopBox1_1 from './components/topBox1_1';
+import TopBox1 from './components/topBox1';
+import TopBox2 from './components/topBox2';
+import TopBox3 from './components/topBox3';
 export default {
   components: {
     BottomBox1,
     BottomBox2,
     BottomBox3,
-    TopBox1_1
+    TopBox1,
+    TopBox2,
+    TopBox3
   }
 };
 </script>

@@ -69,13 +69,13 @@ export default {
             }
         }
         >li:first-child{
-            width: 145px;;
+            width: 145px;
         }
         >li:nth-child(2){
-            width: 200px;;
+            width: 200px;
         }
         >li:first-child{
-            width: 150px;;
+            width: 150px;
         }
     }
 }
