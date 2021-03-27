@@ -2,7 +2,7 @@
 <template>
   <div>
     <div class="head">
-      <div class="head-title" :class="moduleName" />
+      <div class="head-title" :class="moduleName"></div>
       <div class="head-right">{{ curTime }}</div>
     </div>
   </div>
@@ -64,6 +64,11 @@ export default {
       background-image:  url(~@/images/common/comReg@2x.png);
     }
     .epidemic{
+      width:218px;
+      height:27px;
+      background-image:  url(~@/images/common/mryqfk_bt@2x.png);
+    }
+    .healthlishui{
       width:218px;
       height:27px;
       background-image:  url(~@/images/common/mryqfk_bt@2x.png);

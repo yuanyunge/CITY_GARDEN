@@ -1,30 +1,36 @@
 <template>
   <div class="uppartBox2_2_chart_container">
-    <div id="upbox_pie3dChart" ref="upboxPie3dChartRender" class="upbox_pie3dChart" />
+    <div
+      id="upbox_pie3dChart"
+      ref="upboxPie3dChartRender"
+      class="upbox_pie3dChart"
+    />
   </div>
 </template>
 <script>
-import * as echarts from 'echarts';
-import 'echarts-gl';
-import { getPie3D } from '@/utils/geo3d';
+import * as echarts from "echarts";
+import * as Highcharts from "highcharts";
+import "echarts-gl";
+import { getPie3D } from "@/utils/geo3d";
+import {draw3dPie} from '@/utils/highchart'
 export default {
-  name: 'Pie3dChart',
+  name: "Pie3dChart",
   data() {
     return {
       pieChartOf3d: null,
-      pieChartOf3dOptions: {}
+      pieChartOf3dOptions: {},
     };
   },
   mounted() {
     this.$nextTick(() => {
       this.pieChartOf3d = echarts.init(this.$refs.upboxPie3dChartRender);
       this.pieChartOf3d.showLoading({
-        color: '#fff',
-        maskColor: 'rgba(0, 0, 0, 0)',
-        zlevel: 0
+        color: "#fff",
+        maskColor: "rgba(0, 0, 0, 0)",
+        zlevel: 0,
       });
       this.initPieChartOf3d();
-      const resizeFun = window.onresize || function() {};
+      const resizeFun = window.onresize || function () {};
       window.onresize = () => {
         resizeFun();
         this.pieChartOf3d.resize();
@@ -32,63 +38,152 @@ export default {
     });
   },
   methods: {
-    initPieChartOf3d: function() {
-      this.pieChartOf3d.hideLoading();
-      this.pieChartOf3dOptions = getPie3D([{
-        name: '医疗机构',
-        value: 8,
-        itemStyle: {
-          opacity: 0.5,
-          color: 'rgba(66,225,166,.8)'
+    initPieChartOf3d: function () {
+      var each = Highcharts.each,
+        round = Math.round,
+        cos = Math.cos,
+        sin = Math.sin,
+        deg2rad = Math.deg2rad;
+    Highcharts.wrap(Highcharts.seriesTypes.pie.prototype, 'translate', function (proceed) {
+        proceed.apply(this, [].slice.call(arguments, 1));
+        // Do not do this if the chart is not 3D
+        if (!this.chart.is3d()) {
+            return;
         }
-      },
-      {
-        name: '公共场所',
-        value: 5,
-        itemStyle: {
-          opacity: 0.5,
-          color: 'rgba(243,146,31,.8)'
+        var series = this,
+            chart = series.chart,
+            options = chart.options,
+            seriesOptions = series.options,
+            depth = seriesOptions.depth || 0,
+            options3d = options.chart.options3d,
+            alpha = options3d.alpha,
+            beta = options3d.beta,
+            z = seriesOptions.stacking ? (seriesOptions.stack || 0) * depth : series._i * depth;
+        z += depth / 2;
+        if (seriesOptions.grouping !== false) {
+            z = 0;
         }
-      },
-      {
-        name: '集中式、二次供水单位',
-        value: 3,
-        itemStyle: {
-          opacity: 0.5,
-          color: 'rgba(250,237,59,.8)'
-        }
-      },
-      {
-        name: '学校',
-        value: 2,
-        itemStyle: {
-          opacity: 0.5,
-          color: 'rgba(32,219,238,.8)'
-        }
-      },
-      {
-        name: '职工用人单位',
-        value: 2,
-        itemStyle: {
-          opacity: 0.5,
-          color: 'rgba(50,113,255,.8)'
-        }
-      }
-
-      ], 2);
-      console.log(getPie3D);
-      this.pieChartOf3d.setOption(this.pieChartOf3dOptions);
-    }
-  }
+        each(series.data, function (point) {
+            var shapeArgs = point.shapeArgs,
+                angle;
+            point.shapeType = 'arc3d';
+            var ran = point.options.h;
+            shapeArgs.z = z;
+            shapeArgs.depth = depth * 0.75 + ran;
+            shapeArgs.alpha = alpha;
+            shapeArgs.beta = beta;
+            shapeArgs.center = series.center;
+            shapeArgs.ran = ran;
+            angle = (shapeArgs.end + shapeArgs.start) / 2;
+            point.slicedTranslation = {
+                translateX: round(cos(angle) * seriesOptions.slicedOffset * cos(alpha * deg2rad)),
+                translateY: round(sin(angle) * seriesOptions.slicedOffset * cos(alpha * deg2rad))
+            };
+        });
+    });
+    (function (H) {
+        H.wrap(Highcharts.SVGRenderer.prototype, 'arc3dPath', function (proceed) {
+            // Run original proceed method
+            var ret = proceed.apply(this, [].slice.call(arguments, 1));
+            ret.zTop = (ret.zOut + 0.5) / 100;
+            return ret;
+        });
+    }(Highcharts));
+      Highcharts.chart("upbox_pie3dChart", {
+        chart: {
+          type: "pie",
+          animation: false,
+          events: {
+            load: function () {
+              var each = Highcharts.each,
+                points = this.series[0].points;
+              each(points, function (p, i) {
+                p.graphic.attr({
+                  translateY: -p.shapeArgs.ran,
+                });
+                p.graphic.side1.attr({
+                  translateY: -p.shapeArgs.ran,
+                });
+                p.graphic.side2.attr({
+                  translateY: -p.shapeArgs.ran,
+                });
+              });
+            },
+          },
+          options3d: {
+            enabled: true,
+            alpha: 75,
+          },
+        },
+        title: {
+          text: "",
+          show:false
+        },
+        subtitle: {
+          text: "",
+          show:false
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: "pointer",
+            depth: 35,
+            innerSize: 180,
+            dataLabels: {
+              enabled: false,
+            },
+          },
+        },
+        series: [
+          {
+            type: "pie",
+            name: "Browser share",
+            data: [
+              {
+                name: "Firefox",
+                y: 30.0,
+                h: 50,
+              },
+              {
+                name: "IE",
+                y: 26.8,
+                h: 15,
+              },
+              {
+                name: "Chrome",
+                y: 12.8,
+                h: 20,
+              },
+              {
+                name: "Safari",
+                y: 8.5,
+                h: 2,
+              },
+              {
+                name: "Opera",
+                y: 6.2,
+                h: 15,
+              },
+              {
+                name: "Others",
+                y: 0.7,
+                h: 30,
+              },
+            ],
+          },
+        ],
+      });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
-.uppartBox2_2_chart_container{
-  width:100%;
-  height:150px;
-  .upbox_pie3dChart{
-    width:50%;
-    height:100%;
+.uppartBox2_2_chart_container {
+  width: 100%;
+  height: 150px;
+  .upbox_pie3dChart {
+    width: 50%;
+    height: 100%;
   }
 }
 </style>
