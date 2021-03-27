@@ -1,5 +1,5 @@
 <template>
-  <div class="main-box">
+  <div class="main-box_page3">
     <div class="topBox_container">
       <ul>
         <li><TopBox1_1></TopBox1_1></li>
@@ -35,8 +35,8 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.main-box {
+<style lang="scss">
+.main-box_page3{
   .topBox_container {
     margin-left: 17px;
     & > ul {
@@ -60,6 +60,7 @@ export default {
   .legend_title {
     color: #d1d1d1;
     border-left: 2px solid #00e4ff;
+    font-weight:500;
     .warningText {
       color: #f1911f;
     }
@@ -81,6 +82,7 @@ export default {
   }
   .legend_list {
     display: flex;
+
     & > li {
       &::before {
         content: "";
