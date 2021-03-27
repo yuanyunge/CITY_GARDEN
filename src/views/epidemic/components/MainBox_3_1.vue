@@ -24,7 +24,7 @@
       </div>
     </div>
     <div>
-      <div class="MainBox_3_1-sub">纳入管控人数</div>
+      <div class="MainBox_3_1-sub" @click="dialogVisible=true">纳入管控人数</div>
       <div class="MainBox_3_1-content part3">
         <ul>
           <li>应纳入管控<span><countTo :start-val="0" :end-val="238" :duration="2000" /></span>人</li>
@@ -40,6 +40,40 @@
         </ul>
       </div>
     </div>
+    <el-dialog
+      :visible="dialogVisible"
+      :show-close="false"
+      :close-on-click-modal="true"
+      custom-class="diaModal"
+      top="0"
+      @close="dialogVisible=false"
+    >
+      <div class="dia-header bg_img dia-epidemic" />
+      <p class="dia-intro">反映全市重点人群管控情况，包括应纳入管控人数，实际纳入管控人数，累计管控人数。</p>
+      <div class="dia-list">
+        <ul>
+          <li>来源部门：<span>市卫生健康委</span></li>
+          <li>更新频率：<span>每日</span></li>
+        </ul>
+        <ul>
+          <li>分管领导及联系方式：<span>陈国微 13957072331</span></li>
+          <li>更新时间：<span>每日12点</span></li>
+        </ul>
+        <ul>
+          <li>业务负责人及联系方式：<span>李慧龙 18805886651</span></li>
+          <li>更新方式：<span>系统取数</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色值：<span>无</span></li>
+          <li> 红色显色值：<span>境外入丽人员或自疫情中高风险地区来丽返丽人员未实现闭环管控人数≥1人</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色方式及措施：<span>无</span></li>
+          <li> 红色显色方式及措施：<span>在该指标的右侧出现红色！</span></li>
+        </ul>
+      </div>
+      <div class="dia-close bg_img" @click="dialogVisible=false" />
+    </el-dialog>
   </div>
 </template>
 
@@ -49,6 +83,11 @@ export default {
   name: 'MainBox31',
   components: {
     countTo
+  },
+  data() {
+    return {
+      dialogVisible: false
+    };
   }
 };
 </script>
@@ -78,6 +117,7 @@ export default {
         padding-left:6px;
         border-left:1px solid rgba(0, 228, 255, 1);
         margin-bottom:7px;
+        cursor: pointer;
     }
     .MainBox_3_1-content{
         margin-bottom:8px;
@@ -130,5 +170,10 @@ export default {
         >ul{
             margin-bottom: 25px;
         }
+    }
+    .dia-epidemic{
+      width:337px;
+      height:71px;
+      background-image: url(~@/images/common/nrgkrs_bt@2x.png);
     }
 </style>

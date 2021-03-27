@@ -11,7 +11,7 @@
     </div>
 
     <div class="main_box_2_3 ymjzInfo">
-      <div class="MainBox_2_3-title" />
+      <div class="MainBox_2_3-title" @click="dialogVisible=true" />
       <div class="AreaSelectedName">【 缙云县 】</div>
       <div class="AreaSelectedTag">全市疫苗接种情况</div>
       <div class="ymjzInfoContent">
@@ -39,6 +39,40 @@
         </ul>
       </div>
     </div>
+    <el-dialog
+      :visible="dialogVisible"
+      :show-close="false"
+      :close-on-click-modal="true"
+      custom-class="diaModal"
+      top="0"
+      @close="dialogVisible=false"
+    >
+      <div class="dia-header bg_img dia-epidemic" />
+      <p class="dia-intro">全市疫苗接种情况包括应接种总人数；当日接种人数，累计完成单剂次接种人数，累计完成两剂次接种人数，接种完成率。</p>
+      <div class="dia-list">
+        <ul>
+          <li>来源部门：<span>市卫生健康委</span></li>
+          <li>更新频率：<span>每日</span></li>
+        </ul>
+        <ul>
+          <li>分管领导及联系方式：<span>陈国微 13957072331</span></li>
+          <li>更新时间：<span>每日12点</span></li>
+        </ul>
+        <ul>
+          <li>业务负责人及联系方式：<span>刘希平 15805889001</span></li>
+          <li>更新方式：<span>系统取数</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色值：<span>全市当周疫苗接种率排名全省末3位</span></li>
+          <li> 红色显色值：<span>新冠肺炎疫苗接种责任事故≥1起</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色方式及措施：<span>在该指标的右侧出现黄色！</span></li>
+          <li> 红色显色方式及措施：<span>在该指标的右侧出现红色！</span></li>
+        </ul>
+      </div>
+      <div class="dia-close bg_img" @click="dialogVisible=false" />
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -193,7 +227,8 @@ export default {
         }
       },
       seriesData: [],
-      isBindEv: false
+      isBindEv: false,
+      dialogVisible: false
     };
   },
   computed: {
@@ -522,6 +557,7 @@ export default {
           background-repeat: no-repeat;
           top:0;
           left:0;
+          cursor: pointer;
       }
       .AreaSelectedName{
         font-size: 28px;
@@ -583,5 +619,10 @@ export default {
 
       }
     }
+}
+.dia-epidemic{
+  width:337px;
+  height:72px;
+  background-image: url(~@/images/common/ymjz_bt@2x.png);
 }
 </style>

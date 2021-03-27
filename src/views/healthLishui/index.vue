@@ -2,7 +2,7 @@
   <div class="main-box_page3">
     <div class="topBox_container">
       <ul>
-        <li><TopBox1_1></TopBox1_1></li>
+        <li><TopBox1_1 /></li>
         <li>
           <div class="legend_title">婴儿死亡率(‰)</div>
           <ul class="legend_list horizen">
@@ -20,19 +20,25 @@
     </div>
     <div class="bottomBox_container">
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li><BottomBox1 /></li>
+        <li><BottomBox2 /></li>
+        <li><BottomBox3 /></li>
       </ul>
     </div>
   </div>
 </template>
 <script>
-import TopBox1_1 from "./components/topBox1_1";
+import BottomBox1 from './components/BottomBox1';
+import BottomBox2 from './components/BottomBox2';
+import BottomBox3 from './components/BottomBox3';
+import TopBox1_1 from './components/topBox1_1';
 export default {
   components: {
-    TopBox1_1,
-  },
+    BottomBox1,
+    BottomBox2,
+    BottomBox3,
+    TopBox1_1
+  }
 };
 </script>
 <style lang="scss">
@@ -45,8 +51,10 @@ export default {
   }
   .bottomBox_container {
     margin-left: 18px;
+    margin-top:15px;
     & > ul {
       display: flex;
+      justify-content: space-between;
     }
   }
 

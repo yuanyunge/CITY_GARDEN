@@ -13,7 +13,7 @@
       top="0"
       @close="dialogVisible=false"
     >
-      <div class="dia-header bg_img" />
+      <div class="dia-header bg_img dia-epidemic" />
       <p class="dia-intro">根据病例情况、重点人员管控、疫苗接种、疫情监测等4方面，对全市域疫情防控实行红、黄、绿三色分类管理，反应全市新冠病毒疫情防控总体情况。</p>
       <div class="dia-list">
         <ul>
@@ -108,5 +108,10 @@ export default {
       font-size:20px;
       font-family: Microsoft YaHei;
     }
+  }
+  .dia-epidemic{
+    width:337px;
+    height:72px;
+    background-image: url(~@/images/common/mryqfk_dia@2x.png);
   }
 </style>

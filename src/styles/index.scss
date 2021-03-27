@@ -131,9 +131,6 @@ ul {
   padding:0;
 }
 .diaModal .dia-header{
-  width:339px;
-  height:72px;
-  background-image: url(~@/images/common/jcyj_bt@2x.png);
   margin:0 auto;
 }
 .diaModal .el-dialog__body{
@@ -145,7 +142,7 @@ ul {
 .dia-list>ul{
   display:flex;
   >li{
-    flex-grow:1;
+    width:50%;
     >span{
       color:$recordText;
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="MainBox_1_1">
-    <div class="MainBox_1_1-title" />
+    <div class="MainBox_1_1-title" @click="dialogVisible=true" />
     <div class="MainBox_1_1-total">
       <div class="MainBox_1_1-sub">
         <span>全球</span><span class="square" /><span>新增确诊病例数</span><span class="square spe" /><span>累计确诊病例数</span>
@@ -37,6 +37,40 @@
         <div class="MainBox_1_1-progress"><span>累计</span><span class="progress"><span style="width:33%"><span class="progress-inner" /></span></span><span class="num">3984</span><span>例</span></div>
       </li>
     </ul>
+    <el-dialog
+      :visible="dialogVisible"
+      :show-close="false"
+      :close-on-click-modal="true"
+      custom-class="diaModal"
+      top="0"
+      @close="dialogVisible=false"
+    >
+      <div class="dia-header bg_img dia-epidemic" />
+      <p class="dia-intro">反映全球、全国、全市疫情发展趋势，包括新增病例数及累计数、新增无症状感染者数及累计数、全国疫情中高风险地区分布、全国阳性食品或物品分布。</p>
+      <div class="dia-list">
+        <ul>
+          <li>来源部门：<span>市卫生健康委</span></li>
+          <li>更新频率：<span>每日</span></li>
+        </ul>
+        <ul>
+          <li>分管领导及联系方式：<span>陈国微 13957072331</span></li>
+          <li>更新时间：<span>每日12点</span></li>
+        </ul>
+        <ul>
+          <li>业务负责人及联系方式：<span>李慧龙 18805886651</span></li>
+          <li>更新方式：<span>手工统计</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色值：<span>无</span></li>
+          <li> 红色显色值：<span>非主动发现境内或境外入丽人员为无症状感染者或确诊病例数≥1人;</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色方式及措施：<span>无</span></li>
+          <li> 红色显色方式及措施：<span>在该指标的右侧出现红色！</span></li>
+        </ul>
+      </div>
+      <div class="dia-close bg_img" @click="dialogVisible=false" />
+    </el-dialog>
   </div>
 </template>
 
@@ -58,10 +92,8 @@ export default {
       }, {
         value: 'asymptomatic',
         label: '本土无症状'
-      }, {
-        value: 'outInputAsymptomatic',
-        label: '境外输入无症状'
-      }]
+      }],
+      dialogVisible: false
     };
   }
 };
@@ -86,6 +118,7 @@ export default {
           position: absolute;
           top:0;
           left:0;
+          cursor: pointer;
       }
       .MainBox_1_1-sub{
         border-left:1px solid #42E1A6;
@@ -185,5 +218,10 @@ export default {
     right: 0;
     top: -5px;
     width:112px;
+  }
+  .dia-epidemic{
+    width:337px;
+    height:72px;
+    background-image: url(~@/images/common/jcgk_bt@2x.png);
   }
 </style>

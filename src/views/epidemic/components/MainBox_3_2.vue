@@ -1,6 +1,6 @@
 <template>
   <div class="MainBox_3_2">
-    <div class="MainBox_3_2-title" />
+    <div class="MainBox_3_2-title" @click="dialogVisible=true" />
     <div class="mainBox_3_2_tags">
       <ul class="box_tags_ul clearfix">
         <li class="tagItem1 active">境外入丽人员</li>
@@ -13,6 +13,40 @@
     <div class="mainBox_3_2_charts">
       <div id="recordbarChart" ref="recordbarChart" class="recordbarChart" />
     </div>
+    <el-dialog
+      :visible="dialogVisible"
+      :show-close="false"
+      :close-on-click-modal="true"
+      custom-class="diaModal"
+      top="0"
+      @close="dialogVisible=false"
+    >
+      <div class="dia-header bg_img dia-epidemic" />
+      <p class="dia-intro">反映全市境外入丽人员、国内中高风险地区来（返）丽人员、综合服务点及集中隔离点工作人员、进口冷链食品暴露人员、快递外卖从业人员等重点人群核酸检测情况，包括应检测总人数；当日（周）应检人数，实检人数，累计检测人次。</p>
+      <div class="dia-list">
+        <ul>
+          <li>来源部门：<span>市卫生健康委</span></li>
+          <li>更新频率：<span>每日/周</span></li>
+        </ul>
+        <ul>
+          <li>分管领导及联系方式：<span>陈国微 13957072331</span></li>
+          <li>更新时间：<span>每日12点/每周一</span></li>
+        </ul>
+        <ul>
+          <li>业务负责人及联系方式：<span>李慧龙 18805886651</span></li>
+          <li>更新方式：<span>手工统计</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色值：<span>无</span></li>
+          <li> 红色显色值：<span>①进口冷链食品暴露人员定期核酸检测率≤90%;<br>②集中隔离点和综合服务点从业人员定期核酸检测率≤100%。</span></li>
+        </ul>
+        <ul>
+          <li>黄色显色方式及措施：<span>在该指标的右侧出现黄色！</span></li>
+          <li> 红色显色方式及措施：<span>无</span></li>
+        </ul>
+      </div>
+      <div class="dia-close bg_img" @click="dialogVisible=false" />
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -21,7 +55,8 @@ export default {
   name: 'MonitorTrend',
   data() {
     return {
-      barchartOption: {}
+      barchartOption: {},
+      dialogVisible: false
     };
   },
   mounted() {
@@ -154,6 +189,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
   }
 
   .mainBox_3_2_tags {
@@ -207,4 +243,15 @@ export default {
   }
 
 }
+.dia-epidemic{
+    width:339px;
+    height:72px;
+    background-image: url(~@/images/common/jcyj_bt@2x.png);
+  }
+  .dia-list>ul>li:first-child{
+    width:45%;
+  }
+  .dia-list>ul>li:last-child{
+    width:55%;
+  }
 </style>
