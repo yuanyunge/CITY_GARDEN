@@ -12,7 +12,7 @@
     </ul>
     <ul class="down_part_box">
       <li><DownPartBox_1 /></li>
-      <li>21</li>
+      <li><DownPartBox_2 /></li>
     </ul>
   </div>
 </template>
@@ -20,6 +20,7 @@
 <script>
 import UpPartBox_1 from './components/UpPartBox_1';
 import DownPartBox_1 from './components/DownPartBox_1';
+import DownPartBox_2 from './components/DownPartBox_2';
 import UpPartBox_2_1 from './components/UpPartBox_2_1';
 import UpPartBox_2_2 from './components/UpPartBox_2_2';
 import UpPartBox_3 from './components/UpPartBox_3';
@@ -28,6 +29,7 @@ export default {
   components: {
     UpPartBox_1,
     DownPartBox_1,
+    DownPartBox_2,
     UpPartBox_2_1,
     UpPartBox_2_2,
     UpPartBox_3
@@ -43,6 +45,9 @@ export default {
     padding:0;
     list-style:none;
     display: flex;
+  }
+  &>ul:last-child{
+    justify-content:space-between;
   }
   // .up_Part_box{
 

@@ -115,7 +115,58 @@ ul {
   font-size:16px;
 }
 
-
+.el-dialog.diaModal {
+  width:1097px;
+  height:537px;
+  background-image: url(~@/images/common/bgbgdia@2x.png);
+  background-size:cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  transform: translateY(-50%);
+  margin-bottom:0;
+  top:50%;
+}
+.diaModal>.el-dialog__header{
+  padding:0;
+}
+.diaModal .dia-header{
+  width:339px;
+  height:72px;
+  background-image: url(~@/images/common/jcyj_bt@2x.png);
+  margin:0 auto;
+}
+.diaModal .el-dialog__body{
+  padding:15px 70px;
+  color:#fff;
+  font-size: 18px;
+  line-height:36px;
+}
+.dia-list>ul{
+  display:flex;
+  >li{
+    flex-grow:1;
+    >span{
+      color:$recordText;
+    }
+  }
+}
+.dia-note{
+  color:$warnText;
+}
+.dia-intro,
+.dia-note {
+  margin:12px 0 15px 0;
+}
+.dia-close{
+  width:33px;
+  height:33px;
+  background-image: url(~@/images/common/gb_icon@2x.png);
+  position: absolute;
+  top:27px;
+  right:54px;
+  cursor: pointer;
+}
 
 
 
