@@ -96,6 +96,11 @@ export default {
       height:27px;
       background-image:  url(~@/images/common/mryqfk_bt@2x.png);
     }
+    .healthlishui{
+      width:218px;
+      height:27px;
+      background-image:  url(~@/images/common/mryqfk_bt@2x.png);
+    }
     .head-right{
       position: absolute;
       right:28px;
