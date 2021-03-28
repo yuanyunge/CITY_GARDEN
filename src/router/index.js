@@ -20,7 +20,11 @@ export const constantRoutes = [{
   }, {
     name: 'healthlishui',
     path: '/cityGarden/healthlishui',
-    component: () => import(/* webpackChunkName: "epidemic" */ '@/views/healthLishui/index')
+    component: () => import(/* webpackChunkName: "healthlishui" */ '@/views/healthLishui/index')
+  }, {
+    name: 'publicHygiene',
+    path: '/cityGarden/publicHygiene',
+    component: () => import(/* webpackChunkName: "publicHygiene" */ '@/views/publicHygiene/index')
   }]
 },
 {
