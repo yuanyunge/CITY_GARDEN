@@ -26,9 +26,9 @@ export default {
 
 <style lang="scss" scoped>
 .BottomBox3{
-  width:602px;
+  width:619px;
   height:243px;
-  background-image:  url(~@/images/healthlishui/jkbzbk-bg.png);
+  background-image:  url(~@/images/healthlishui/jkzlbk_bg@2x.png);
   padding:65px 20px 10px 25px;
   position: relative;
   .box-title{
