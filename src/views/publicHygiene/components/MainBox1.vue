@@ -1,5 +1,6 @@
 <template>
   <div class="mainBox1-container">
+    <div class="box-title bg_img" />
     <ul class="mainBox1_parts">
       <li class="mainBox1_1">
         <div class="legend_title">突发公共卫生事件及相关信息报告数</div>
@@ -40,6 +41,15 @@ export default {
   padding-left: 20px;
   padding-top: 78px;
   padding-right:16px;
+  position: relative;
+  .box-title {
+    background-image: url("~@/images/publicHygiene/tfggwsjc@2x.png");
+    width: 422px;
+    height:56px;
+    position:absolute;
+    top:20px;
+    left:0;
+  }
   .mainBox1_parts {
     display: flex;
     flex-wrap: wrap;
