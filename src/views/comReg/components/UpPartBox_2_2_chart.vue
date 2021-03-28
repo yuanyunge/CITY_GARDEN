@@ -17,16 +17,16 @@
   </div>
 </template>
 <script>
-import * as Highcharts from "highcharts";
-import Highcharts3D from "highcharts/highcharts-3d";
+import * as Highcharts from 'highcharts';
+import Highcharts3D from 'highcharts/highcharts-3d';
 Highcharts3D(Highcharts);
 
 export default {
-  name: "Pie3dChart",
+  name: 'Pie3dChart',
   data() {
     return {
       pieChartOf3d: null,
-      pieChartOf3dOptions: {},
+      pieChartOf3dOptions: {}
     };
   },
   mounted() {
@@ -46,40 +46,40 @@ export default {
     });
   },
   methods: {
-    initPieChartOf3d: function () {
-      var each = Highcharts.each,
-        round = Math.round,
-        cos = Math.cos,
-        sin = Math.sin,
-        deg2rad = Math.deg2rad;
+    initPieChartOf3d: function() {
+      var each = Highcharts.each;
+      var round = Math.round;
+      var cos = Math.cos;
+      var sin = Math.sin;
+      var deg2rad = Math.deg2rad;
       Highcharts.wrap(
         Highcharts.seriesTypes.pie.prototype,
-        "translate",
-        function (proceed) {
+        'translate',
+        function(proceed) {
           proceed.apply(this, [].slice.call(arguments, 1));
           // Do not do this if the chart is not 3D
           if (!this.chart.is3d()) {
             return;
           }
-          var series = this,
-            chart = series.chart,
-            options = chart.options,
-            seriesOptions = series.options,
-            depth = seriesOptions.depth || 0,
-            options3d = options.chart.options3d,
-            alpha = options3d.alpha,
-            beta = options3d.beta,
-            z = seriesOptions.stacking
-              ? (seriesOptions.stack || 0) * depth
-              : series._i * depth;
+          var series = this;
+          var chart = series.chart;
+          var options = chart.options;
+          var seriesOptions = series.options;
+          var depth = seriesOptions.depth || 0;
+          var options3d = options.chart.options3d;
+          var alpha = options3d.alpha;
+          var beta = options3d.beta;
+          var z = seriesOptions.stacking
+            ? (seriesOptions.stack || 0) * depth
+            : series._i * depth;
           z += depth / 2;
           if (seriesOptions.grouping !== false) {
             z = 0;
           }
-          each(series.data, function (point) {
-            var shapeArgs = point.shapeArgs,
-              angle;
-            point.shapeType = "arc3d";
+          each(series.data, function(point) {
+            var shapeArgs = point.shapeArgs;
+            var angle;
+            point.shapeType = 'arc3d';
             var ran = point.options.h;
             shapeArgs.z = z;
             shapeArgs.depth = depth * 0.75 + ran;
@@ -94,16 +94,16 @@ export default {
               ),
               translateY: round(
                 sin(angle) * seriesOptions.slicedOffset * cos(alpha * deg2rad)
-              ),
+              )
             };
           });
         }
       );
-      (function (H) {
+      (function(H) {
         H.wrap(
           Highcharts.SVGRenderer.prototype,
-          "arc3dPath",
-          function (proceed) {
+          'arc3dPath',
+          function(proceed) {
             // Run original proceed method
             var ret = proceed.apply(this, [].slice.call(arguments, 1));
             ret.zTop = (ret.zOut + 0.5) / 100;
@@ -111,88 +111,88 @@ export default {
           }
         );
       })(Highcharts);
-      Highcharts.chart("upbox_pie3dChart", {
+      Highcharts.chart('upbox_pie3dChart', {
         chart: {
-          type: "pie",
+          type: 'pie',
           animation: false,
-          backgroundColor:'transparent',
+          backgroundColor: 'transparent',
           events: {
-            load: function () {
-              var each = Highcharts.each,
-                points = this.series[0].points;
-              each(points, function (p, i) {
+            load: function() {
+              var each = Highcharts.each;
+              var points = this.series[0].points;
+              each(points, function(p, i) {
                 p.graphic.attr({
-                  translateY: -p.shapeArgs.ran,
+                  translateY: -p.shapeArgs.ran
                 });
                 p.graphic.side1.attr({
-                  translateY: -p.shapeArgs.ran,
+                  translateY: -p.shapeArgs.ran
                 });
                 p.graphic.side2.attr({
-                  translateY: -p.shapeArgs.ran,
+                  translateY: -p.shapeArgs.ran
                 });
               });
-            },
+            }
           },
           options3d: {
             enabled: true,
             alpha: 60,
-            beta: 0,
-          },
+            beta: 0
+          }
         },
         plotOptions: {
           pie: {
             allowPointSelect: true,
-            cursor: "pointer",
-            colors:['rgba(66, 225, 166, .5)','rgba(243, 146, 31, .5)','rgba(250, 237, 59, .5)','rgba(32, 219, 238, .5)','rgba(50, 113, 255, .5)'],
+            cursor: 'pointer',
+            colors: ['rgba(66, 225, 166, .5)', 'rgba(243, 146, 31, .5)', 'rgba(250, 237, 59, .5)', 'rgba(32, 219, 238, .5)', 'rgba(50, 113, 255, .5)'],
             depth: 35,
             innerSize: '60%',
             dataLabels: {
-              enabled: false,
-            },
-          },
+              enabled: false
+            }
+          }
         },
-        title:{
-          text:null
+        title: {
+          text: null
         },
-        credits:{
-          enabled:false
+        credits: {
+          enabled: false
         },
         series: [
           {
-            type: "pie",
-            name: "违法违规执行次数",
+            type: 'pie',
+            name: '违法违规执行次数',
             data: [
               {
-                name: "医疗机构",
+                name: '医疗机构',
                 y: 8,
-                h: 20,
+                h: 20
               },
               {
-                name: "公共场所",
+                name: '公共场所',
                 y: 5,
-                h: 1,
+                h: 1
               },
               {
-                name: "集中式、二次供水单位",
+                name: '集中式、二次供水单位',
                 y: 3,
-                h: 5,
+                h: 5
               },
               {
-                name: "学校",
+                name: '学校',
                 y: 2,
-                h: 8,
+                h: 8
               },
               {
-                name: "职工用人单位",
+                name: '职工用人单位',
                 y: 2,
-                h: 16,
-              },
-            ],
-          },
-        ],
+                h: 16
+              }
+            ]
+          }
+        ]
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

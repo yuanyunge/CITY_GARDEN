@@ -1,32 +1,32 @@
 <template>
   <div class="topBox1_1_container bg_img">
-    <div class="box-title bg_img"></div>
+    <div class="box-title bg_img" />
     <ul class="topBox1_1_1 contentList">
       <li>
         <div class="legend_title">人均预期寿命(岁)</div>
         <div class="contentitem bg_img">
           <div class="contentItemTitle">
-            <span class="descText">全省</span><br />
+            <span class="descText">全省</span><br>
             <span class="valueText">78.5<span class="unitText">岁</span></span>
           </div>
           <ul class="historyList">
             <li>
               <span class="descText">2020</span>
-              <span class="valueText"
-                >78.26<span class="unitText">岁</span></span
-              >
+              <span
+                class="valueText"
+              >78.26<span class="unitText">岁</span></span>
             </li>
             <li>
               <span class="descText">2019</span>
-              <span class="valueText"
-                >80.81<span class="unitText">岁</span></span
-              >
+              <span
+                class="valueText"
+              >80.81<span class="unitText">岁</span></span>
             </li>
             <li>
               <span class="descText">2018</span>
-              <span class="valueText"
-                >80.36<span class="unitText">岁</span></span
-              >
+              <span
+                class="valueText"
+              >80.36<span class="unitText">岁</span></span>
             </li>
           </ul>
         </div>
@@ -35,29 +35,29 @@
         <div class="legend_title">孕产妇死亡率(万)</div>
         <div class="contentitem bg_img">
           <div class="contentItemTitle">
-            <span class="descText">省标准</span><br />
-            <span class="valueText"
-              >低于9.5/10<span class="unitText">万</span></span
-            >
+            <span class="descText">省标准</span><br>
+            <span
+              class="valueText"
+            >低于9.5/10<span class="unitText">万</span></span>
           </div>
           <ul class="historyList">
             <li>
               <span class="descText">2020</span>
-              <span class="valueText"
-                >6.03/10<span class="unitText">万</span></span
-              >
+              <span
+                class="valueText"
+              >6.03/10<span class="unitText">万</span></span>
             </li>
             <li>
               <span class="descText">2019</span>
-              <span class="valueText"
-                >20.02/10<span class="unitText">万</span></span
-              >
+              <span
+                class="valueText"
+              >20.02/10<span class="unitText">万</span></span>
             </li>
             <li>
               <span class="descText">2018</span>
-              <span class="valueText"
-                >4.6/10<span class="unitText">万</span></span
-              >
+              <span
+                class="valueText"
+              >4.6/10<span class="unitText">万</span></span>
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@
         <div class="legend_title">婴儿死亡率(‰)</div>
         <div class="contentitem bg_img">
           <div class="contentItemTitle">
-            <span class="descText">省标准</span><br />
+            <span class="descText">省标准</span><br>
             <span class="valueText">低于7<span class="unitText">%</span></span>
           </div>
           <ul class="historyList">
@@ -95,7 +95,7 @@
         </ul>
       </div>
       <div class="chartTit">（省标准 <span class="valueText">50</span><span class="unitText">%</span>）</div>
-      <topBox1_1_chart></topBox1_1_chart>
+      <topBox1_1_chart />
     </div>
     <div class="topBox1_1_3 reportChart">
       <div class="reportChart-header clearfix">
@@ -106,7 +106,7 @@
         </ul>
       </div>
       <div class="chartTit">（省标准 <span class="valueText">93.50</span><span class="unitText">%</span>）</div>
-      <topBox1_2_chart></topBox1_2_chart>
+      <topBox1_2_chart />
     </div>
   </div>
 </template>
@@ -115,11 +115,11 @@ import topBox1_1_chart from './topBox1_1_chart';
 import topBox1_2_chart from './topBox1_2_chart';
 
 export default {
-    components:{
-        topBox1_1_chart,
-        topBox1_2_chart
-    }
-}
+  components: {
+    topBox1_1_chart,
+    topBox1_2_chart
+  }
+};
 </script>
 <style lang="scss" scoped>
 .topBox1_1_container {
@@ -221,7 +221,7 @@ export default {
               color:#F3921F;
           }
       }
-      
+
   }
   .topBox1_1_3{
       margin-top:15px;

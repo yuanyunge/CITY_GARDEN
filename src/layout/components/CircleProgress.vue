@@ -1,13 +1,13 @@
 <template>
-    <div class="CircleProgress">
-        <div class="circleProgressitem" ref="circleProgressitem"></div>
-    </div>
+  <div class="CircleProgress">
+    <div ref="circleProgressitem" class="circleProgressitem" />
+  </div>
 </template>
 <script>
 export default {
-    name:'CircleProgress',
-    props:{
+  name: 'CircleProgress',
+  props: {
 
-    }
-}
+  }
+};
 </script>

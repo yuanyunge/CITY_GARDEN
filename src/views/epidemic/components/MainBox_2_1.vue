@@ -493,7 +493,7 @@ export default {
         this.myChart.on('click', (e) => {
           this.$refs.backBtn.style.display = 'block';
           var chooseName = this.mapJsonList.filter((item) => {
-            return item.code == e.name;
+            return item.code === e.name;
           });
           this.curMapJsonInfo = chooseName[0];
           this.mapJson = chooseName[0].json;

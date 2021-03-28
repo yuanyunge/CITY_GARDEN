@@ -3,36 +3,36 @@
     <ul class="mainBox1_parts">
       <li class="mainBox1_1">
         <div class="legend_title">突发公共卫生事件及相关信息报告数</div>
-        <MainBox1_1_chart></MainBox1_1_chart>
+        <MainBox1_1_chart />
       </li>
       <li class="mainBox1_2">
         <div class="legend_title">甲乙类传染病</div>
-        <MainBox1_2_chart></MainBox1_2_chart>
+        <MainBox1_2_chart />
       </li>
       <li class="mainBox1_3">
         <div class="legend_title">甲乙类传染病发病<span>TOP5</span></div>
-        <MainBox1_1_chart></MainBox1_1_chart>
+        <MainBox1_1_chart />
       </li>
       <li class="mainBox1_4">
         <div class="legend_title">法定传染病</div>
-        <MainBox1_1_chart></MainBox1_1_chart>
+        <MainBox1_1_chart />
       </li>
       <li class="mainBox1_5">
         <div class="legend_title">免疫规划监测</div>
-        <MainBox1_1_chart></MainBox1_1_chart>
+        <MainBox1_1_chart />
       </li>
     </ul>
   </div>
 </template>
 <script>
-import MainBox1_1_chart from "./MainBox1_1_chart";
-import MainBox1_2_chart from "./MainBox1_2_chart";
+import MainBox1_1_chart from './MainBox1_1_chart';
+import MainBox1_2_chart from './MainBox1_2_chart';
 
 export default {
   components: {
     MainBox1_1_chart,
     MainBox1_2_chart
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

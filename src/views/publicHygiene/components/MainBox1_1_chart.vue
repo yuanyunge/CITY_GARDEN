@@ -1,14 +1,12 @@
 <template>
-    <div class="mainBox1_1_chart">
-        <div id="mainBox1_1_chart" ref="mainBox1_1_chart">
-
-        </div>
-    </div>
+  <div class="mainBox1_1_chart">
+    <div id="mainBox1_1_chart" ref="mainBox1_1_chart" />
+  </div>
 </template>
 <script>
 export default {
-    
-}
+
+};
 </script>
 <style lang="scss" scoped>
 .mainBox1_1_chart{

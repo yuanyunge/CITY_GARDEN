@@ -63,7 +63,6 @@ pie3D 尝试
             导致此前高亮没能取消，所以补充了对 globalout 的监听。
 
 *************************/
-import * as echarts from 'echarts';
 // 生成扇形的曲面参数方程，用于 series-surface.parametricEquation
 export function getParametricEquation(startRatio, endRatio, isSelected, isHovered, k, height) {
   // 计算

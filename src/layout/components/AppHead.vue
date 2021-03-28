@@ -106,6 +106,11 @@ export default {
       height:27px;
       background-image:  url(~@/images/common/jkls@2x.png);
     }
+    .publicHygiene{
+      width:149px;
+      height:36px;
+      background-image:  url(~@/images/common/ggws@2x.png);
+    }
     .head-right{
       position: absolute;
       right:28px;

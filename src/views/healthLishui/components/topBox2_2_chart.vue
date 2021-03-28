@@ -8,37 +8,37 @@
   </div>
 </template>
 <script>
-import * as echarts from "echarts";
+import * as echarts from 'echarts';
 export default {
   data() {
     return {
       level: 1,
       levelOptions: [
         {
-          label: "省",
-          value: 1,
+          label: '省',
+          value: 1
         },
         {
-          label: "市",
-          value: 2,
-        },
+          label: '市',
+          value: 2
+        }
       ],
       chartOptions: {},
       topLineChart: null,
       lineChartDataOfLevel1: [8, 12, 3.6, 10, 5],
-      lineChartDataOfLevel2: [2, 6, 3, 16, 8],
+      lineChartDataOfLevel2: [2, 6, 3, 16, 8]
     };
   },
   mounted() {
     this.$nextTick(() => {
       this.topLineChart = echarts.init(this.$refs.topPart_2_chart_1);
       this.topLineChart.showLoading({
-        color: "#fff",
-        maskColor: "rgba(0, 0, 0, 0)",
-        zlevel: 0,
+        color: '#fff',
+        maskColor: 'rgba(0, 0, 0, 0)',
+        zlevel: 0
       });
       this.initChartFn();
-      const resizeFun = window.onresize || function () {};
+      const resizeFun = window.onresize || function() {};
       window.onresize = () => {
         resizeFun();
         this.topLineChart.resize();
@@ -46,102 +46,102 @@ export default {
     });
   },
   methods: {
-    initChartFn: function () {
+    initChartFn: function() {
       this.topLineChart.hideLoading();
       this.chartOptions = {
         tooltip: {
-          trigger: "axis",
+          trigger: 'axis',
           axisPointer: {
-            type: "shadow",
-          },
+            type: 'shadow'
+          }
         },
         grid: {
-          top: "35px",
-          left: "0",
-          right: "30px",
-          bottom: "0",
-          containLabel: true,
+          top: '35px',
+          left: '0',
+          right: '30px',
+          bottom: '0',
+          containLabel: true
         },
         xAxis: {
-          type: "category",
+          type: 'category',
           data: [2016, 2017, 2018, 2019, 2020],
 
           axisLabel: {
-            formatter: "{value}",
-            color: "#fff",
+            formatter: '{value}',
+            color: '#fff'
           },
           splitLine: {
             show: false,
             lineStyle: {
-              color: "#fff",
+              color: '#fff',
               opacity: 0.2,
-              type: "dashed",
-            },
+              type: 'dashed'
+            }
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: "#fff",
-              opacity: 0.2,
-            },
+              color: '#fff',
+              opacity: 0.2
+            }
           },
           axisTick: {
             show: true,
             lineStyle: {
-              color: "#fff",
-              opacity: 0.2,
-            },
-          },
+              color: '#fff',
+              opacity: 0.2
+            }
+          }
         },
         yAxis: {
-          type: "value",
+          type: 'value',
           min: 0,
           max: 25,
-          name: "%",
-          nameLocation: "end",
+          name: '%',
+          nameLocation: 'end',
           axisPointer: {
-            type: "shadow",
+            type: 'shadow'
           },
           axisLabel: {
-            color: "#fff",
+            color: '#fff'
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: "#fff",
-              opacity: 0.2,
-            },
+              color: '#fff',
+              opacity: 0.2
+            }
           },
           axisTick: {
             show: true,
             lineStyle: {
-              color: "#fff",
-              opacity: 0.2,
-            },
+              color: '#fff',
+              opacity: 0.2
+            }
           },
           splitLine: {
             show: true,
             lineStyle: {
-              color: "#fff",
+              color: '#fff',
               opacity: 0.2,
-              type: "dashed",
-            },
-          },
+              type: 'dashed'
+            }
+          }
         },
         series: [
           {
-            name: "省",
-            type: "line",
+            name: '省',
+            type: 'line',
             smooth: true,
             data: this.lineChartDataOfLevel1,
             itemStyle: {
               normal: {
-                color: "#F3921F",
-              },
+                color: '#F3921F'
+              }
             },
             areaStyle: {
               color: {
-                type: "linear",
+                type: 'linear',
                 x: 0,
                 y: 0,
                 x2: 0,
@@ -149,49 +149,49 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "#20DBEE", // 0% 处的颜色
+                    color: '#20DBEE' // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: "rgba(32,219,238,.0)", // 100% 处的颜色
-                  },
+                    color: 'rgba(32,219,238,.0)' // 100% 处的颜色
+                  }
                 ],
-                global: false,
-              },
+                global: false
+              }
             },
             markLine: {
-              symbol: "none", //去掉警戒线最后面的箭头
-              
+              symbol: 'none', // 去掉警戒线最后面的箭头
+
               data: [
                 {
-                  silent: false, //鼠标悬停事件  true没有，false有
+                  silent: false, // 鼠标悬停事件  true没有，false有
                   lineStyle: {
-                    //警戒线的样式  ，虚实  颜色
-                    type: "solid",
-                    color: "#EB4E29",
-                    opacity:0.6
+                    // 警戒线的样式  ，虚实  颜色
+                    type: 'solid',
+                    color: '#EB4E29',
+                    opacity: 0.6
                   },
-                  name: "警戒线",
-                  label:{
-                      show:false
+                  name: '警戒线',
+                  label: {
+                    show: false
                   },
-                  yAxis: 22,
-                },
-              ],
-            },
+                  yAxis: 22
+                }
+              ]
+            }
           },
           {
-            name: "市",
-            type: "line",
+            name: '市',
+            type: 'line',
             smooth: true,
             itemStyle: {
               normal: {
-                color: "#20DBEE",
-              },
+                color: '#20DBEE'
+              }
             },
             areaStyle: {
               color: {
-                type: "linear",
+                type: 'linear',
                 x: 0,
                 y: 0,
                 x2: 0,
@@ -199,23 +199,23 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "#FF8A00", // 0% 处的颜色
+                    color: '#FF8A00' // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: "transparent", // 100% 处的颜色
-                  },
+                    color: 'transparent' // 100% 处的颜色
+                  }
                 ],
-                global: false,
-              },
+                global: false
+              }
             },
-            data: this.lineChartDataOfLevel2,
-          },
-        ],
+            data: this.lineChartDataOfLevel2
+          }
+        ]
       };
       this.topLineChart.setOption(this.chartOptions);
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

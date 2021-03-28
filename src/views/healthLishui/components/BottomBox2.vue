@@ -5,11 +5,11 @@
       <li>
         <div class="legend_title yellowTheme">城乡居民医疗保险参保率(%)</div>
         <div class="chart_intro">(达标线99%）</div>
-        <BottomBox2_1_chart></BottomBox2_1_chart>
+        <BottomBox2_1_chart />
       </li>
       <li>
         <div class="legend_title yellowTheme">人均体育场地面积(㎡)</div>
-        <BottomBox2_2_chart></BottomBox2_2_chart>
+        <BottomBox2_2_chart />
 
       </li>
     </ul>
@@ -21,7 +21,7 @@ import BottomBox2_1_chart from './BottomBox2_1_chart';
 import BottomBox2_2_chart from './BottomBox2_2_chart';
 
 export default {
-  components:{
+  components: {
     BottomBox2_1_chart,
     BottomBox2_2_chart
   }
@@ -55,7 +55,7 @@ export default {
         margin-top:10px;
         margin-bottom:10px;
       }
-      
+
     }
   }
 }

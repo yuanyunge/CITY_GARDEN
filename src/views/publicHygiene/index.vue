@@ -1,48 +1,47 @@
 <template>
-    <div class="main-box_page4">
-        <ul class="main-box-continer">
-            <li class="mainBox1">
-                <MainBox1></MainBox1>
-            </li>
-            <li class="mainBox2"><MainBox2></MainBox2></li>
-            <li class="mainBox3"><MainBox2></MainBox2></li>
-        </ul>
-    </div>
+  <div class="main-box_page4">
+    <ul class="main-box-continer">
+      <li class="mainBox1 bg_img">
+        <MainBox1 />
+      </li>
+      <li class="mainBox2 bg_img"><MainBox2 /></li>
+      <li class="mainBox3 bg_img"><MainBox3 /></li>
+    </ul>
+  </div>
 </template>
 <script>
 import MainBox1 from './components/MainBox1';
 import MainBox2 from './components/MainBox2';
 import MainBox3 from './components/MainBox3';
 export default {
-    name:'PublicHygiene',
-    components:{
-        MainBox1,
-        MainBox2,
-        MainBox3
-    }
-}
+  name: 'PublicHygiene',
+  components: {
+    MainBox1,
+    MainBox2,
+    MainBox3
+  }
+};
 </script>
 <style lang="scss">
 .main-box_page4{
-    border:1px solid red;
     .main-box-continer{
         display:flex;
         padding-left:20px;
-        li{
+        >li{
             height:940px;
-            
+
             &.mainBox1{
                 width:707px;
-                border:1px solid blue;
+                background-image:  url(~@/images/publicHygiene/part1@2x.png);
             }
             &.mainBox2{
                 width:695px;
-                border:1px solid green;
+                background-image:  url(~@/images/publicHygiene/part2@2x.png);
                 margin-left:8px;
             }
             &.mainBox3{
                 width:461px;
-                border:1px solid yellow;
+                background-image:  url(~@/images/publicHygiene/part3@2x.png);
                 margin-left:6px;
             }
         }

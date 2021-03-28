@@ -1,6 +1,6 @@
 <template>
   <div class="topBox2_container bg_img">
-    <div class="box-title bg_img"></div>
+    <div class="box-title bg_img" />
 
     <div class="topBox2_1 reportChart">
       <div class="reportChart-header clearfix">
@@ -14,7 +14,7 @@
         </ul>
       </div>
 
-      <TopBox2_1_chart></TopBox2_1_chart>
+      <TopBox2_1_chart />
     </div>
     <div class="topBox2_2 reportChart">
       <div class="reportChart-header clearfix">
@@ -28,7 +28,7 @@
         </ul>
       </div>
 
-      <TopBox2_2_chart></TopBox2_2_chart>
+      <TopBox2_2_chart />
     </div>
     <div class="topBox2_3 reportChart">
       <div class="reportChart-header clearfix">
@@ -41,23 +41,21 @@
         </ul>
       </div>
 
-      <TopBox2_3_chart></TopBox2_3_chart>
+      <TopBox2_3_chart />
     </div>
   </div>
 </template>
 <script>
-import TopBox2_1_chart from "./topBox2_1_chart";
-import TopBox2_2_chart from "./topBox2_2_chart";
-import TopBox2_3_chart from "./topBox2_3_chart";
-
-
+import TopBox2_1_chart from './topBox2_1_chart';
+import TopBox2_2_chart from './topBox2_2_chart';
+import TopBox2_3_chart from './topBox2_3_chart';
 
 export default {
   components: {
     TopBox2_1_chart,
     TopBox2_2_chart,
     TopBox2_3_chart
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -106,6 +104,6 @@ export default {
       }
     }
   }
-  
+
 }
 </style>
